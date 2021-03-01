@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from gensimutility import views
 
 urlpatterns = [
+    path('',views.home,name='home'),
     path('admin/', admin.site.urls),
+    path('dataset/',views.dataset,name='dataset'),
+    path('overview/',views.Overview,name='overview'),
 ]

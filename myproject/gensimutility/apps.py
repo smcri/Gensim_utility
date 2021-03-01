@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class GensimutilityConfig(AppConfig):
-    name = 'gensimutility'
+class AppConfig(AppConfig):
+    name = 'App'

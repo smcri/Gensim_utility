@@ -1,0 +1,81 @@
+{% load static %}
+{% load admin_urls %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datasets</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static 'css/dataset.css' %}">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body id="dataset_body">
+  <nav class="navbar navbar-inverse flex-column flex-md-row" >
+    <div class="container-fluid" >
+            <div class="navbar-header">
+              <a class="navbar-brand" style="color:white;" href="{% url 'home' %}">GenSim Utility</a>
+            </div>
+            <ul class="nav navbar-nav">
+              <li  ><a href="{%url 'home' %}" style="color:white;">Home</a></li>
+              <li ><a href="{%url 'overview' %}" style="color:white;" >Overview</a></li>
+              <li><a href="{% url 'admin:login' %}"style="color:white;">Login</a></li>
+              <li class="active"><a href="{% url 'dataset' %}" style="color:white;">Datasets</a></li>
+            </ul>
+          </div>
+</nav>
+<div class="jumbotron text-center" style="background-color:rgba(54, 53, 65, 0.534) ;">
+    <h2 style="color:white;">Datasets</h2>
+  </div>
+  <hr style="width:75%;"/>
+
+  <section id="dataset">
+    <div class="div2"><h3>Choose from available Datasets</h3></div>
+  <div class="dropdown div2">
+    <button class="btn-lg btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Dataset 1
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+    </div>
+  </div>
+
+  <label class="url_label" for="url">Enter the URL for external dataset</label>
+  <input type="url" name="url" class="url"
+        placeholder="https://example.com"
+        pattern="https://.*" size="30"
+        >
+
+  <div class="dropdown div2">
+    <button class="btn-lg btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Dataset 2
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+    </div>
+  </div>
+  <label class="url_label" for="url">Enter the URL for external dataset</label>
+  <input type="url" name="url" class="url"
+        placeholder="https://example.com"
+        pattern="https://.*" size="30"
+        >
+
+  <div class="column-sm text-center">
+    <form class="login-form">
+      <button type="button" class="btn-lg btn-primary" onclick="window.location.href=''">
+        Generate
+      </button>
+    </form>
+    </div>
+  
+  </section>
+</body>
+</html>
