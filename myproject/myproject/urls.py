@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('dataset/',views.dataset,name='dataset'),
     path('overview/',views.Overview,name='overview'),
+    path('simi/',views.sim_graph,name='sim'),
 ]

@@ -45,9 +45,9 @@
       <a class="dropdown-item" href="#">Something else here</a>
     </div>
   </div>
-
+  <form class="login-form" method="post">
   <label class="url_label" for="url">Enter the URL for external dataset</label>
-  <input type="url" name="url" class="url"
+  <input type="url" name="url1" class="url"
         placeholder="https://example.com"
         pattern="https://.*" size="30"
         >
@@ -63,14 +63,15 @@
     </div>
   </div>
   <label class="url_label" for="url">Enter the URL for external dataset</label>
-  <input type="url" name="url" class="url"
+  <input type="url" name="url2" class="url"
         placeholder="https://example.com"
         pattern="https://.*" size="30"
         >
 
   <div class="column-sm text-center">
-    <form class="login-form">
-      <button type="button" class="btn-lg btn-primary" onclick="window.location.href=''">
+    
+      {% csrf_token %}
+      <button type="submit" class="btn-lg btn-primary">
         Generate
       </button>
     </form>
