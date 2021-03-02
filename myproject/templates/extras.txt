@@ -1,0 +1,46 @@
+
+        <div class="item">
+            <img class=car_img  src="http://placehold.it/1200x300" alt="3" />
+            <div class="carousel-caption describe clickable">
+                <h1 >Euclidean Similarity Index</h1>
+    
+            </div>
+        </div>
+
+        <div class="item">
+          <img class=car_img src="http://placehold.it/1200x300" alt="4" />
+          <div class="carousel-caption describe clickable">
+              <h1 >Mahalanobis Similarity Index</h1>
+  
+          </div>
+        </div>
+
+        <div class="item">
+            <img class=car_img   src="http://placehold.it/1200x300" alt="5" />
+            <div class="carousel-caption describe clickable">
+                <h1 >Chebyshev Similarity Index</h1>
+    
+            </div>
+        </div>
+
+
+      <div class="item">
+          <img class=car_img  src="http://placehold.it/1200x300" alt="6" />
+          <div class="carousel-caption describe clickable">
+              <h1 >Matusita Similarity Index</h1>
+  
+          </div>
+      </div>
+      <div class="item">
+        <img class=car_img  src="http://placehold.it/1200x300" alt="7" />
+        <div class="carousel-caption describe clickable">
+            <h1 >Divergence Similarity Index</h1>
+
+        </div>
+      </div>
+      <div class="item">
+      <img class=car_img  src="http://placehold.it/1200x300" alt="8" />
+      <div class="carousel-caption describe clickable">
+          <h1 >Soergel Similarity Index</h1>
+      </div>
+      </div>

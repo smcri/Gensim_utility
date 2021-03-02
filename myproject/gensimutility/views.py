@@ -19,6 +19,9 @@ import urllib,base64
 sys.path.append('/home/aadharsh/seproject/Gensim_Utility/myproject/gensimutility')
 
 from simi import ret_graph
+from .models import blog
+
+
 # Create your views here.
 
 context = {}
@@ -29,7 +32,8 @@ def title(request):
 
 def Overview(request):
     my_de = {'Over_tag':'\0'}
-    return render(request,'overview.html',context=my_de)
+    blogs = blog.objects.all()
+    return render(request,'overview.html',{'blogs':blogs})
 
 def Main(request):
     return HttpResponse("Main")
