@@ -1,3 +1,4 @@
+{%load static%}
 <!DOCTYPE html>
 <html>
 
@@ -5,38 +6,37 @@
   <title>GenSim Utility: About Us</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="assets/css/aboutus.css" />
-  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png" />
-  <link rel="manifest" href="icons/site.webmanifest" />
+  <link rel="stylesheet" href="{%static 'assets/css/aboutus.css'%}" />
+  <link rel="apple-touch-icon" sizes="180x180" href="{%static 'icons/apple-touch-icon.png' %}" />
+  <link rel="icon" type="image/png" sizes="32x32" href="{%static 'icons/favicon-32x32.png' %}" />
+  <link rel="icon" type="image/png" sizes="16x16" href="{%static 'icons/favicon-16x16.png' %}" />
+  <link rel="manifest" href="{%static 'icons/site.webmanifest' %}" />
 </head>
 
 <body>
   <!-- Header -->
   <header id="header" class="alt">
-    <div class="logo"><a href="home.html">GenSim Utility</a></div>
+    <div class="logo"><a href="{%url 'home' %}">GenSim Utility</a></div>
     <a href="#menu">Menu</a>
   </header>
 
   <!-- Nav -->
   <nav id="menu">
     <ul class="links">
-      <li><a href="home.html">Home</a></li>
-      <li><a href="overview.html">Overview</a></li>
-      <li><a href="simgen.html">Similarity Generation</a></li>
-      <li><a href="aboutus.html">About Us</a></li>
+      <li><a href="{%url 'home' %}">Home</a></li>
+      <li><a href="{% url 'overview' %}">Overview</a></li>
+      <li><a href="{% url 'dataset' %}">Similarity Generation</a></li>
+      <li><a href="{% url 'about' %}">About Us</a></li>
     </ul>
   </nav>
 
   <!-- Banner -->
   <section class="banner half">
     <article>
-      <img src="images/dtbg.jpg" alt="" />
+      <img src="{%static 'images/photo.jpg'%}" />
       <div class="inner">
         <header>
-          <h3><b></b></h3>
-          <h2 id="ovheader">About Us</h2>
+          <h2 id="ovheader">About Developers</h2>
         </header>
       </div>
     </article>
@@ -45,7 +45,7 @@
   <!--about us main 1-->
   <section class="flex-container">
     <div class="img-wrap">
-      <img src="images/photo.jpg" />
+      <img src="{%static 'images/photo.jpg'%}" />
     </div>
     <div class="content">
       <header class="major">
@@ -81,13 +81,13 @@
       </footer>
     </div>
     <div class="img-wrap">
-      <img src="images/photo.jpg" />
+      <img src="{%static 'images/photo.jpg'%}" />
     </div>
   </section>
   <!--about us main 3-->
   <section class="flex-container">
     <div class="img-wrap">
-      <img src="images/photo.jpg" />
+      <img src="{%static 'images/photo.jpg'%}" />
     </div>
     <div class="content">
       <header class="major">
@@ -123,10 +123,9 @@
       </footer>
     </div>
     <div class="img-wrap">
-      <img src="images/photo.jpg" />
+      <img src="{%static 'images/photo.jpg'%}" />
     </div>
   </section>
-
   <!-- Footer -->
   <footer id="footer">
     <div class="container">
@@ -148,11 +147,11 @@
     <div class="copyright">Project AOW</div>
   </footer>
   <!-- Scripts -->
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/jquery.scrollex.min.js"></script>
-  <script src="assets/js/skel.min.js"></script>
-  <script src="assets/js/util.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="{%static 'assets/js/jquery.min.js' %}"></script>
+  <script src="{%static 'assets/js/jquery.scrollex.min.js' %}"></script>
+  <script src="{%static 'assets/js/skel.min.js' %}"></script>
+  <script src="{%static 'assets/js/util.js' %}"></script>
+  <script src="{%static 'assets/js/main.js' %}"></script>
 </body>
 
 </html>

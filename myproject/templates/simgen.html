@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 
@@ -5,31 +6,31 @@
   <title>GenSim: Similarity Generation</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="assets/css/simgen.css" />
-  
+  <link rel="stylesheet" href="{%static 'assets/css/simgen.css' %}" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
-  <link rel="manifest" href="icons/site.webmanifest">
+  <link rel="apple-touch-icon" sizes="180x180" href="{%static 'icons/apple-touch-icon.png' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{%static 'icons/favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'icons/favicon-16x16.png' %}">
+  <link rel="manifest" href="{% static 'icons/site.webmanifest' %}">
 </head>
 
 <body>
 
   <!-- Header -->
   <header id="header" class="alt">
-    <div class="logo"><a href="home.html">GenSim Utility</a></div>
+    <div class="logo"><a href="{% url 'home' %}">GenSim Utility</a></div>
     <a href="#menu">Menu</a>
   </header>
 
   <!-- Nav -->
   <nav id="menu">
     <ul class="links">
-      <li><a href="home.html">Home</a></li>
-      <li><a href="overview.html">Overview</a></li>
-      <li><a href="simgen.html">Similarity Generation</a></li>
-      <li><a href="aboutus.html">About Us</a></li>
+      <li><a href="{% url 'home' %}">Home</a></li>
+      <li><a href="{% url 'overview' %}">Overview</a></li>
+      <li><a href="{% url 'dataset' %}">Similarity Generation</a></li>
+      <li><a href="{% url 'about' %}">About Us</a></li>
     </ul>
   </nav>
 
@@ -46,10 +47,16 @@
     </article>
   </section>
 
-  <section id="outerbox" class="flex-container">
-    <div class="d-flex flex-column">
-      <div class="d-flex flex-row">Flex item 1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos nemo ipsum perferendis quos! Illum, voluptatibus vitae similique explicabo laudantium minima, nesciunt est ut repellat ad consequatur quia repudiandae maiores a.</div>
-      <div class="d-flex flex-row">Flex item 2 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim sunt sint dolor, error deserunt repellat nisi corporis illo rem eveniet necessitatibus dolores sapiente quaerat numquam consequatur harum repudiandae provident facilis!</div>
+  <section id="one" class="wrapper style2">
+    <div id="b" class="inner box hidden">
+      <div class="row">
+        <div class="col-lg-2">
+          <h3>Choose Dataset #1</h3>
+        </div>
+        <div class="col-lg-2">
+          <h3>Choose Dataset #2</h3>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -70,11 +77,11 @@
     </div>
   </footer>
   <!-- Scripts -->
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/jquery.scrollex.min.js"></script>
-  <script src="assets/js/skel.min.js"></script>
-  <script src="assets/js/util.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="{%static 'assets/js/jquery.min.js' %}"></script>
+  <script src="{%static 'assets/js/jquery.scrollex.min.js' %}"></script>
+  <script src="{%static 'assets/js/skel.min.js' %}"></script>
+  <script src="{%static 'assets/js/util.js' %}"></script>
+  <script src="{%static 'assets/js/main.js' %}"></script>
 
 </body>
 
