@@ -1,0 +1,187 @@
+{%load static%}<!DOCTYPE html>
+<html>
+  <head>
+    <title>GenSim Utility: About Us</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{%static 'assets/css/aboutus.css'%}" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{%static 'icons/apple-touch-icon.png' %}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{%static 'icons/favicon-32x32.png' %}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{%static 'icons/favicon-16x16.png' %}"
+    />
+    <link rel="manifest" href="{%static 'icons/site.webmanifest' %}" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="header" class="alt">
+      <div class="logo"><a href="{%url 'home' %}">GenSim Utility</a></div>
+      <a href="#menu">Menu</a>
+    </header>
+
+    <!-- Nav -->
+    <nav id="menu">
+      <ul class="links">
+        <li><a href="{%url 'home' %}">Home</a></li>
+        <li><a href="{% url 'overview' %}">Overview</a></li>
+        <li><a href="{% url 'dataset' %}">Similarity Generation</a></li>
+        <li><a href="{% url 'about' %}">About Us</a></li>
+      </ul>
+    </nav>
+
+    <!-- Banner -->
+    <section class="banner half">
+      <article>
+        <img src="{%static 'images/dtbg.jpg'%}" alt="" />
+        <div class="inner">
+          <header>
+            <h2 id="ovheader">About Developers</h2>
+          </header>
+        </div>
+      </article>
+    </section>
+
+    <!--about us main 1-->
+    <section class="flex-container">
+      <div>
+        <img
+          src="{%static 'images/photo.jpg'%}"
+          width="345"
+          height="345"
+          alt=""
+          data-position="25% 25%"
+        />
+      </div>
+      <div class="content">
+        <header class="major">
+          <h3>Ayush Baranwal</h3>
+        </header>
+        <p>
+          Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna
+          sed nunc rhoncus condimentum sem. In efficitur ligula tate urna.
+          Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor.
+          Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis
+          tempus.
+        </p>
+      </div>
+    </section>
+    <!--about us main 2-->
+    <section class="flex-container">
+      <div class="content">
+        <header class="major">
+          <h3>Sed nunc ligula</h3>
+        </header>
+        <p>
+          Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna
+          sed nunc rhoncus condimentum sem. In efficitur ligula tate urna.
+          Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor.
+          Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis
+          tempus.
+        </p>
+      </div>
+      <div>
+        <img
+          src="{%static 'images/dtbg.jpg'%}"
+          width="560"
+          height="345"
+          alt=""
+          data-position="25% 25%"
+        />
+      </div>
+    </section>
+    <!--about us main 3-->
+    <section class="flex-container">
+      <div>
+        <img
+          src="{%static 'images/dtbg.jpg'%}"
+          width="560"
+          height="345"
+          alt=""
+          data-position="25% 25%"
+        />
+      </div>
+      <div class="content">
+        <header class="major">
+          <h3>Sed nunc ligula</h3>
+        </header>
+        <p>
+          Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna
+          sed nunc rhoncus condimentum sem. In efficitur ligula tate urna.
+          Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor.
+          Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis
+          tempus.
+        </p>
+      </div>
+    </section>
+    <!--about us main 4-->
+    <section class="flex-container">
+      <div class="content">
+        <header class="major">
+          <h3>Sed nunc ligula</h3>
+        </header>
+        <p>
+          Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna
+          sed nunc rhoncus condimentum sem. In efficitur ligula tate urna.
+          Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor.
+          Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis
+          tempus.
+        </p>
+      </div>
+      <div>
+        <img
+          src="{%static 'images/dtbg.jpg'%}"
+          width="560"
+          height="345"
+          alt=""
+          data-position="25% 25%"
+        />
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="container">
+        <ul class="icons">
+          <li>
+            <a href="#" class="icon fa-twitter"
+              ><span class="label">Twitter</span></a
+            >
+          </li>
+          <li>
+            <a href="#" class="icon fa-facebook"
+              ><span class="label">Facebook</span></a
+            >
+          </li>
+          <li>
+            <a href="#" class="icon fa-instagram"
+              ><span class="label">Instagram</span></a
+            >
+          </li>
+          <li>
+            <a href="#" class="icon fa-envelope-o"
+              ><span class="label">Email</span></a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="copyright">Project AOW</div>
+    </footer>
+    <!-- Scripts -->
+    <script src="{%static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{%static 'assets/js/jquery.scrollex.min.js' %}"></script>
+    <script src="{%static 'assets/js/skel.min.js' %}"></script>
+    <script src="{%static 'assets/js/util.js' %}"></script>
+    <script src="{%static 'assets/js/main.js' %}"></script>
+  </body>
+</html>

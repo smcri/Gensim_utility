@@ -46,11 +46,14 @@ def dataset(request):
    		print(url1)
    		print(url2)
    		return redirect('sim')
-   return render(request,'datasets.html', context = my_data)
+   return render(request,'simgen.html', context = my_data)
 
 def home(request):
     my_home = {'home_tag':'\0'}
     return render(request,'home.html',context = my_home)
+
+def about(request):
+	return render(request,'aboutus.html')
 
 def sim_graph(request):
 #	context['graph'] = ret_graph()

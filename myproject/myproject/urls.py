@@ -23,4 +23,5 @@ urlpatterns = [
     path('dataset/',views.dataset,name='dataset'),
     path('overview/',views.Overview,name='overview'),
     path('simi/',views.sim_graph,name='sim'),
+    path('about/',views.about,name='about'),
 ]
