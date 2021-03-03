@@ -1,0 +1,75 @@
+body {
+  background-color: #192025;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: serif;
+}
+
+.container-fluid {
+  transition-timing-function: linear;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  transform: translateY(1rem);
+  -webkit-transform: translateY(1rem);
+}
+
+#pan {
+  border-color: rgba(27, 31, 34, 0.85);
+  opacity: 0.9;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+#pan-body {
+  background-color: rgb(27, 31, 32);
+  padding-left: 3rem;
+  padding-right: 3rem;
+  font-size: 2rem;
+  color: rgb(201, 201, 201);
+}
+#pan-head {
+  background-color: rgb(27, 31, 34);
+  border-color: rgb(27, 31, 34);
+  color: rgb(201, 201, 201);
+  font-weight: 100;
+}
+#pan-foot {
+  background-color: rgb(27, 31, 34);
+  border-color: rgb(27, 31, 34);
+  color: rgb(201, 201, 201);
+  padding-right: 3rem;
+  padding-left: 3rem;
+}
+#clos {
+  background-color: rgb(27, 31, 34);
+  border-radius: 90%;
+  color: white;
+  text-align: center;
+  font-size: 4rem;
+  padding: 1rem;
+  width: 6rem;
+  transition-timing-function: linear;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
+  margin: 0rem;
+  font-weight: 100;
+  opacity: 1;
+}
+#clos:hover {
+  color: white;
+  background-color: rgb(50, 55, 59);
+}
+.unl {
+}
+#head {
+  border-bottom: solid white;
+  border-width: 0.1rem;
+  color: white;
+  margin-bottom: 3rem;
+  width: 17rem;
+}

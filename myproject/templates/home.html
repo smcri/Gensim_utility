@@ -1,177 +1,163 @@
-{% load static %}<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>GenSim: Home</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="{%static 'assets/css/overview.css'%}" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="{%static 'icons/apple-touch-icon.png'%}"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="{%static 'icons/favicon-32x32.png'%}"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="{%static 'icons/favicon-16x16.png'%}"
-    />
-    <link rel="manifest" href="{%static 'icons/site.webmanifest'%}" />
-  </head>
-  <body>
-    <!-- Header -->
-    <header id="header" class="alt">
-      <div class="logo"><a href="{% url 'home' %}">GenSim Utility</a></div>
-      <a href="#menu">Menu</a>
-    </header>
 
-    <!-- Nav -->
-    <nav id="menu">
-      <ul class="links">
-        <li><a href="{% url 'home' %}">Home</a></li>
-        <li><a href="{% url 'overview' %}">Overview</a></li>
-        <li><a href="{% url 'dataset' %}">Similarity Generation</a></li>
-        <li><a href="{% url 'about' %}">About Us</a></li>
-      </ul>
-    </nav>
+<head>
+  <title>GenSim: Home</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/overview.css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png" />
+  <link rel="manifest" href="icons/site.webmanifest" />
+</head>
 
-    <!-- Banner -->
-    <section class="banner half">
-      <article>
-        <img src="{%static 'images/dtbg.jpg' %}" alt="" />
-        <div class="inner">
-          <header>
-            <h3><b>Welcome to GenSim Utility</b></h3>
-            <h2 id="ovheader">A Similarity Generation Webapp</h2>
-          </header>
-        </div>
-      </article>
-    </section>
+<body>
+  <!-- Header -->
+  <header id="header" class="alt">
+    <div class="logo"><a href="home.html">GenSim Utility</a></div>
+    <a href="#menu">Menu</a>
+  </header>
 
-   
+  <!-- Nav -->
+  <nav id="menu">
+    <ul class="links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="overview.html">Overview</a></li>
+      <li><a href="simgen.html">Similarity Generation</a></li>
+      <li><a href="aboutus.html">About Us</a></li>
+    </ul>
+  </nav>
 
-    <div class="inner">
-        <div id="intr">
-          <div class="box">								
-            <div class="content">
-              <header class="align-center">  
-                <h2>Introduction</h2>
-              </header>
-              <p class="pcentre"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-            </div>
-          </div>
-        </div>
-        </div>
-
-
-    <!-- One -->
-    <section id="one" class="wrapper style2">
+  <!-- Banner -->
+  <section class="banner half">
+    <article>
+      <img src="images/dtbg.jpg" alt="" />
       <div class="inner">
-        <div class="grid-style">
-          <div>
-            <div class="box">
-              <div class="content">
-                <header class="align-center">
-                  <h2>Admin Login</h2>
-                </header>
-                <p class="pcentre">Login to use the Django Admin features.</p>
-                <footer class="align-center">
-                  <a href="{% url 'admin:login' %}" class="button special">Login</a>
-                </footer>
-              </div>
+        <header>
+          <h3><b>Welcome to GenSim Utility</b></h3>
+          <h2 id="hheader">A Similarity Generation Webapp</h2>
+        </header>
+      </div>
+    </article>
+  </section>
+
+
+
+  <div class="inner">
+    <div id="intr">
+      <div class="box">
+        <div class="content">
+          <header class="align-center">
+            <h2>Introduction</h2>
+          </header>
+          <p class="pcentre"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+            into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+            release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+            software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- One -->
+  <section id="one" class="wrapper style2">
+    <div class="inner">
+      <div class="grid-style">
+        <div>
+          <div class="box">
+            <div class="content">
+              <header class="align-center">
+                <h2>Admin Login</h2>
+              </header>
+              <p class="pcentre">Login to use the Django Admin features.</p>
+              <footer class="align-center">
+                <a href="#" class="button special">Login</a>
+              </footer>
             </div>
           </div>
+        </div>
 
-          <div>
-            <div class="box">
-              <div class="content">
-                <header class="align-center">
-                  <h2>Similarity: Overview</h2>
-                </header>
-                <p class="pcentre">
-                  About the various similarity measures used in this Webapp.
-                </p>
-                <footer class="align-center">
-                  <a href="{%url 'overview' %}" class="button special">Overview</a>
-                </footer>
-              </div>
+        <div>
+          <div class="box">
+            <div class="content">
+              <header class="align-center">
+                <h2>Similarity: Overview</h2>
+              </header>
+              <p class="pcentre">
+                About the various similarity measures used in this Webapp.
+              </p>
+              <footer class="align-center">
+                <a href="overview.html" class="button special">Overview</a>
+              </footer>
             </div>
           </div>
+        </div>
 
-          <div>
-            <div class="box">
-              <div class="content">
-                <header class="align-center">
-                  <h2>Generate Similarity Index</h2>
-                </header>
-                <p class="pcentre">
-                  Determine similarity index between a pair of datasets.
-                </p>
-                <footer class="align-center">
-                  <a href="{% url 'dataset' %}" class="button special">Choose Datasets</a>
-                </footer>
-              </div>
+        <div>
+          <div class="box">
+            <div class="content">
+              <header class="align-center">
+                <h2>Generate Similarity Index</h2>
+              </header>
+              <p class="pcentre">
+                Determine similarity index between a pair of datasets.
+              </p>
+              <footer class="align-center">
+                <a href="simgen.html" class="button special">Choose Datasets</a>
+              </footer>
             </div>
           </div>
+        </div>
 
-          <div>
-            <div class="box">
-              <div class="content">
-                <header class="align-center">
-                  <h2>Our Team</h2>
-                </header>
-                <p class="pcentre">
-                  Our project experience and what we learned.
-                </p>
-                <footer class="align-center">
-                  <a href="{%url 'about' %}" class="button special">About Us</a>
-                </footer>
-              </div>
+        <div>
+          <div class="box">
+            <div class="content">
+              <header class="align-center">
+                <h2>Our Team</h2>
+              </header>
+              <p class="pcentre">
+                Our project experience and what we learned.
+              </p>
+              <footer class="align-center">
+                <a href="#" class="button special">About Us</a>
+              </footer>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer id="footer">
-      <div class="container">
-        <ul class="icons">
-          <li>
-            <a href="#" class="icon fa-twitter"
-              ><span class="label">Twitter</span></a
-            >
-          </li>
-          <li>
-            <a href="#" class="icon fa-facebook"
-              ><span class="label">Facebook</span></a
-            >
-          </li>
-          <li>
-            <a href="#" class="icon fa-instagram"
-              ><span class="label">Instagram</span></a
-            >
-          </li>
-          <li>
-            <a href="#" class="icon fa-envelope-o"
-              ><span class="label">Email</span></a
-            >
-          </li>
-        </ul>
-      </div>
-      <div class="copyright">Project AOW</div>
-    </footer>
-    <!-- Scripts -->
-    <script src="{%static 'assets/js/jquery.min.js' %}"></script>
-    <script src="{%static 'assets/js/jquery.scrollex.min.js' %}"></script>
-    <script src="{%static 'assets/js/skel.min.js' %}"></script>
-    <script src="{%static 'assets/js/util.js' %}"></script>
-    <script src="{%static 'assets/js/main.js' %}"></script>
-  </body>
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="container">
+      <ul class="icons">
+        <li>
+          <a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a>
+        </li>
+        <li>
+          <a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a>
+        </li>
+        <li>
+          <a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a>
+        </li>
+        <li>
+          <a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a>
+        </li>
+      </ul>
+    </div>
+    <div class="copyright">Project AOW</div>
+  </footer>
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrollex.min.js"></script>
+  <script src="assets/js/skel.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
 </html>

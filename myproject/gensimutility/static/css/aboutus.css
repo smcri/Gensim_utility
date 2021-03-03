@@ -4,9 +4,70 @@
 .pcentre {
   text-align: center;
 }
+img {
+  width: 100%;
+  height: auto;
+  alt: "";
+  object-position: 0.5rem 0.5rem;
+}
 
-#ovheader {
-  font-size: 4.5rem;
+.flex-container {
+  display: flex;
+  background-color: wheat;
+  margin: 1rem;
+}
+
+.flex-container .content {
+  background-color: #e8deec;
+  padding: 1rem;
+  margin: 1rem;
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 1680px) {
+  .flex-container .content {
+    width: 2500px;
+    font-size: 1rem;
+  }
+  #ovheader {
+    font-size: 4.5rem;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .flex-container .content {
+    width: 2000px;
+    font-size: 1.2rem;
+  }
+  #ovheader {
+    font-size: 3.5rem;
+  }
+}
+@media screen and (max-width: 980px) {
+  .flex-container .content {
+    width: 1200px;
+    font-size: 0.8rem;
+  }
+  #ovheader {
+    font-size: 2.5rem;
+  }
+}
+@media screen and (max-width: 736px) {
+  .flex-container .content {
+    width: 900px;
+    font-size: 0.8rem;
+  }
+  #ovheader {
+    font-size: 2.5rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .flex-container .content {
+    width: 600px;
+    font-size: 0.8rem;
+  }
+  #ovheader {
+    font-size: 2rem;
+  }
 }
 html,
 body,
@@ -4613,21 +4674,4 @@ body.is-mobile .banner > article {
   #footer {
     padding: 3rem 0 1rem 0;
   }
-}
-.flex-container {
-  display: flex;
-  background-color: white;
-  padding: 20px;
-}
-
-.flex-container > img {
-  background-color: white;
-  margin: 2.5rem 0 2.5rem 0;
-  font-size: 1.5rem;
-}
-.flex-container .content {
-  background-color: #e8deec;
-  margin: 2.5rem 2.5rem 2.5rem 2.5rem;
-  padding: 20px;
-  font-size: 1.5rem;
 }
