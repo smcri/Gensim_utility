@@ -21,11 +21,10 @@ sys.path.append('/home/aadharsh/seproject/Gensim_Utility/myproject/gensimutility
 from simi import ret_graph
 from .models import blog
 
-
+blogId = ''
 # Create your views here.
 
 context = {}
-
 
 def title(request):
     return HttpResponse("Home Page")
@@ -33,6 +32,11 @@ def title(request):
 def Overview(request):
     my_de = {'Over_tag':'\0'}
     blogs = blog.objects.all()
+    if request.method == 'POST':
+    		global blogId
+    		blogId = request.POST['blogId']
+    		#print("Overview")
+    		#print(blogId)
     return render(request,'overview.html',{'blogs':blogs})
 
 def Main(request):
@@ -55,11 +59,17 @@ def home(request):
 def about(request):
 	return render(request,'aboutus.html')
 
+def learnmore(request):
+	#print("learnmore")
+	#print(blogId)
+	req_blog = blog.objects.get(id=int(blogId))
+	return render(request,'display.html',{'req_blog':req_blog})
+
 def sim_graph(request):
 #	context['graph'] = ret_graph()
 	df1 = pd.read_csv("https://raw.githubusercontent.com/scikit-multiflow/streaming-datasets/master/iris_timestamp.csv",parse_dates=["timestamp"], index_col="timestamp")
 
-	print(df1)
+	#print(df1)
 	df1[df1.columns].plot(kind='line')
 	fig = plt.gcf()
 

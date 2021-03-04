@@ -63,7 +63,11 @@
 							</header>
 							<p> {{ blog.content }} </p>
 							<footer class="align-center">
-								<button onclick="openpage()"> Learn More</button>
+								<form  method="post">
+									{% csrf_token %}
+									<input type="hidden" id="blogId" name="blogId" value="{{blog.id}}">
+									<button type="submit" onclick="openpage()"> Learn More</button>
+								</form>
 							</footer>
 						</div>
 					</div>
