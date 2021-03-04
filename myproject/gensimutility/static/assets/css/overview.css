@@ -17,11 +17,7 @@ ul.links li.active {
   padding-left: 2rem;
   padding-right: 2rem;
 }
-.ovheader {
-  font-size: 3.5rem;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
+
 html,
 body,
 div,
@@ -4623,6 +4619,12 @@ body.is-mobile .banner > article {
   text-align: center;
 }
 
+h2.ovheader {
+  font-size: 3rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
 @media screen and (max-width: 736px) {
   #footer {
     padding: 3rem 0 1rem 0;
@@ -4632,8 +4634,8 @@ body.is-mobile .banner > article {
   #hheader {
     font-size: 3rem;
   }
-  .ovheader {
-    font-size: 2rem;
+  h2.ovheader {
+    font-size: 3rem;
   }
   .oheader {
     font-size: 4rem;
