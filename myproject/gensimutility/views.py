@@ -16,12 +16,11 @@ from django.http import HttpResponse
 import mpld3
 import urllib,base64
 
-sys.path.append('/home/aadharsh/seproject/Gensim_Utility/myproject/gensimutility')
-
-from simi import ret_graph
-from .models import blog
+#from simi import ret_graph
+from .models import blog,datasets
 
 blogId = ''
+
 # Create your views here.
 
 context = {}
@@ -57,6 +56,7 @@ def home(request):
     return render(request,'home.html',context = my_home)
 
 def about(request):
+	#print(os.getcwd())
 	return render(request,'aboutus.html')
 
 def learnmore(request):
@@ -67,9 +67,12 @@ def learnmore(request):
 
 def sim_graph(request):
 #	context['graph'] = ret_graph()
-	df1 = pd.read_csv("https://raw.githubusercontent.com/scikit-multiflow/streaming-datasets/master/iris_timestamp.csv",parse_dates=["timestamp"], index_col="timestamp")
+	#print(datasets.path)
+	dataset = datasets.objects.get(id=1)
+	path = getattr(dataset,'path')
+	df1 = pd.read_csv(path,parse_dates=["timestamp"], index_col="timestamp")
 
-	#print(df1)
+	print(df1)
 	df1[df1.columns].plot(kind='line')
 	fig = plt.gcf()
 

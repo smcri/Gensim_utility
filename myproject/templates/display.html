@@ -30,11 +30,11 @@
             <div id="head">
               <h2 class="unl">{{ req_blog.name }}</h2>
             </div>
-            {{req_blog.content}}
+            {{req_blog.description}}
 
           </div>
-          <div id="pan-foot" class="panel-footer">Author</div>
-          <div id="pan-foot" class="panel-footer">Date</div>
+          <div id="pan-foot" class="panel-footer">Author : {{req_blog.written_by}}</div>
+          <div id="pan-foot" class="panel-footer">Date : {{req_blog.created_at}}</div>
         </div>
       </div>
       <div class="col-lg-3 col-md-2 col-xs-1"></div>
