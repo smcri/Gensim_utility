@@ -19,3 +19,12 @@ class datasets(models.Model):
 
 	def __str__(self):
 		return self.name
+
+class team(models.Model):
+	name = models.CharField(max_length=30, unique=True)
+	description = models.TextField(max_length=400000, unique=True)
+	email_addr = models.EmailField(max_length=30, unique=True)
+	profile_pic = models.CharField(max_length=30)
+
+	def __str__(self):
+		return self.name

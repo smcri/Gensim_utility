@@ -43,90 +43,46 @@
   </section>
 
   <!--about us main 1-->
+  {% for member in members %}
+  {% if forloop.counter|divisibleby:2 %}
   <section class="flex-container">
     <div class="img-wrap">
       <img src="{%static 'images/photo.jpg'%}" />
     </div>
     <div class="content">
       <header class="major">
-        <h3>Aadharsh Roshan</h3>
+        <h3>{{member.name}}</h3>
       </header>
       <p>
-        Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna
-        sed nunc rhoncus condimentum sem. In efficitur ligula tate urna.
-        Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor.
-        Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis
-        tempus.
+        {{member.description}}
       </p>
       <footer class="pcentre">
-        Email:demo@gensim.com
+        Email:{{member.email_addr}}
       </footer>
     </div>
   </section>
   <!--about us main 2-->
+  {% else %}
   <section class="flex-container">
     <div class="content">
       <header class="major">
-        <h3>Ayush Baranwal</h3>
+        <h3>{{member.name}}</h3>
       </header>
       <p>
-        Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna
-        sed nunc rhoncus condimentum sem. In efficitur ligula tate urna.
-        Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor.
-        Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis
-        tempus.
+        {{member.description}}
       </p>
       <footer class="pcentre">
-        Email:demo@gensim.com
+        Email:{{member.email_addr}}
       </footer>
     </div>
     <div class="img-wrap">
       <img src="{%static 'images/photo.jpg'%}" />
     </div>
   </section>
+  {% endif %}
+  {% endfor %}
   <!--about us main 3-->
-  <section class="flex-container">
-    <div class="img-wrap">
-      <img src="{%static 'images/photo.jpg'%}" />
-    </div>
-    <div class="content">
-      <header class="major">
-        <h3>Sankalp Rajendran</h3>
-      </header>
-      <p>
-        Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna
-        sed nunc rhoncus condimentum sem. In efficitur ligula tate urna.
-        Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor.
-        Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis
-        tempus.
-      </p>
-      <footer class="pcentre">
-        Email:demo@gensim.com
-      </footer>
-    </div>
-  </section>
-  <!--about us main 4-->
-  <section class="flex-container">
-    <div class="content">
-      <header class="major">
-        <h3>Sahil Sharma</h3>
-      </header>
-      <p>
-        Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna
-        sed nunc rhoncus condimentum sem. In efficitur ligula tate urna.
-        Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor.
-        Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis
-        tempus.
-      </p>
-      <footer class="pcentre">
-        Email:demo@gensim.com
-      </footer>
-    </div>
-    <div class="img-wrap">
-      <img src="{%static 'images/photo.jpg'%}" />
-    </div>
-  </section>
-  <!-- Footer -->
+  
   <footer id="footer">
     <div class="container">
       <ul class="icons">

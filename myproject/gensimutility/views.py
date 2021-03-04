@@ -17,7 +17,7 @@ import mpld3
 import urllib,base64
 
 #from simi import ret_graph
-from .models import blog,datasets
+from .models import blog,datasets,team
 
 blogId = ''
 
@@ -57,7 +57,8 @@ def home(request):
 
 def about(request):
 	#print(os.getcwd())
-	return render(request,'aboutus.html')
+	members = team.objects.all()
+	return render(request,'aboutus.html',{'members':members})
 
 def learnmore(request):
 	#print("learnmore")
