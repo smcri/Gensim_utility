@@ -47,7 +47,7 @@
   {% if forloop.counter|divisibleby:2 %}
   <section class="flex-container">
     <div class="img-wrap">
-      <img src="{%static 'images/photo.jpg'%}" />
+      <img src="{%static 'images/profile_pics/'|add:member.profile_pic%}" />
     </div>
     <div class="content">
       <header class="major">
@@ -76,7 +76,7 @@
       </footer>
     </div>
     <div class="img-wrap">
-      <img src="{%static 'images/photo.jpg'%}" />
+      <img src="{%static 'images/profile_pics/'|add:member.profile_pic%}" />
     </div>
   </section>
   {% endif %}
