@@ -3,15 +3,6 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
 @import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css");
 
-#outerbox{
-  margin-left: 2rem;
-}
-.pcentre {
-  text-align: center;
-}
-#ovheader {
-  font-size: 4.5rem;
-}
 html,
 body,
 div,
@@ -2107,7 +2098,7 @@ hr {
 
 .box {
   margin-bottom: 2rem;
-  background: rgb(232, 222, 236);
+  background: rgb(104, 103, 104);
 }
 
 .box .image.fit {
@@ -4617,5 +4608,113 @@ body.is-mobile .banner > article {
 @media screen and (max-width: 736px) {
   #footer {
     padding: 3rem 0 1rem 0;
+  }
+}
+
+#outerbox {
+  margin: 2rem;
+  background-color: rgb(232, 222, 236);
+  padding: 1rem;
+}
+.pcentre {
+  text-align: center;
+}
+#ovheader {
+  font-size: 4.5rem;
+}
+label {
+  display: block;
+  font: 1.5rem "Fira Sans", sans-serif;
+}
+
+input,
+label {
+  margin: 0.4rem 0;
+}
+.dropdown {
+  margin-bottom: 1rem;
+}
+.collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active,
+.collapsible:hover {
+  background-color: #ccc;
+}
+
+.content {
+  display: none;
+  overflow: hidden;
+  background-color: rgb(232, 222, 236);
+}
+
+.urlbox {
+  margin: 1rem;
+}
+
+.panel {
+  margin: 1rem;
+  padding: 1rem;
+}
+
+#outerbox {
+  border-style: groove;
+  border-color: #1b111a;
+  border-width: 1px;
+}
+#innerbox1 {
+  border-style: solid;
+  border-color: #f0ecef;
+  border-width: 2px;
+}
+#innerbox2 {
+  border-style: solid;
+  border-color: #f0eaef;
+  border-width: 2px;
+}
+#outerh2 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-decoration: solid;
+}
+
+@media screen and (max-width: 1680px) {
+  #ovheader {
+    font-size: 4rem;
+  }
+}
+@media screen and (max-width: 1280px) {
+  #ovheader {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 980px) {
+  #ovheader {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 736px) {
+  #ovheader {
+    font-size: 2rem;
+  }
+  .urlfield {
+    max-width: 300px;
+  }
+}
+@media screen and (max-width: 480px) {
+  #ovheader {
+    font-size: 2rem;
+  }
+  .urlfield {
+    max-width: 300px;
   }
 }
