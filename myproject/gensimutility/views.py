@@ -16,16 +16,14 @@ from django.http import HttpResponse
 import mpld3
 import urllib,base64
 
-sys.path.append('C:/Users/sahil/PycharmProjects/Gensim_utility/myproject/gensimutility')
+#from simi import ret_graph
+from .models import blog,datasets,team
 
-from simi import ret_graph
-from .models import blog
-
+blogId = ''
 
 # Create your views here.
 
 context = {}
-
 
 def title(request):
     return HttpResponse("Home Page")
@@ -33,6 +31,11 @@ def title(request):
 def Overview(request):
     my_de = {'Over_tag':'\0'}
     blogs = blog.objects.all()
+    if request.method == 'POST':
+    		global blogId
+    		blogId = request.POST['blogId']
+    		#print("Overview")
+    		#print(blogId)
     return render(request,'overview.html',{'blogs':blogs})
 
 def Main(request):
@@ -46,15 +49,29 @@ def dataset(request):
    		print(url1)
    		print(url2)
    		return redirect('sim')
-   return render(request,'datasets.html', context = my_data)
+   return render(request,'simgen.html', context = my_data)
 
 def home(request):
     my_home = {'home_tag':'\0'}
     return render(request,'home.html',context = my_home)
 
+def about(request):
+	#print(os.getcwd())
+	members = team.objects.all()
+	return render(request,'aboutus.html',{'members':members})
+
+def learnmore(request):
+	#print("learnmore")
+	#print(blogId)
+	req_blog = blog.objects.get(id=int(blogId))
+	return render(request,'display.html',{'req_blog':req_blog})
+
 def sim_graph(request):
 #	context['graph'] = ret_graph()
-	df1 = pd.read_csv("https://raw.githubusercontent.com/scikit-multiflow/streaming-datasets/master/iris_timestamp.csv",parse_dates=["timestamp"], index_col="timestamp")
+	#print(datasets.path)
+	dataset = datasets.objects.get(id=1)
+	path = getattr(dataset,'path')
+	df1 = pd.read_csv(path,parse_dates=["timestamp"], index_col="timestamp")
 
 	print(df1)
 	df1[df1.columns].plot(kind='line')

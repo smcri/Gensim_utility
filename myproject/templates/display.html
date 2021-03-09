@@ -1,0 +1,53 @@
+{% load static %}<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Display</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="{%static 'assets/css/display.css'%}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="{%static 'assets/js/display.js'%}"></script>
+</head>
+
+<body>
+
+  <!-- Wrapper -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-3 col-md-2 col-xs-1"></div>
+      <div class="col-lg-6 col-md-8 col-xs-10">
+        <div id="pan" class="panel panel-default">
+          <div id="pan-head" class="panel-heading">
+
+            <button onclick="closepage()" id="clos" type="button" class="close" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div id="pan-body" class="panel-body">
+            <div id="head">
+              <h2 class="unl">{{ req_blog.name }}</h2>
+            </div>
+            {{req_blog.description}}
+
+          </div>
+          <div id="pan-foot" class="panel-footer">Author : {{req_blog.written_by}}</div>
+          <div id="pan-foot" class="panel-footer">Date : {{req_blog.created_at}}</div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-2 col-xs-1"></div>
+    </div>
+  </div>
+
+
+  <!-- Scripts -->
+  <script src="{%static 'assets/js/jquery.min.js'%}"></script>
+  <script src="{%static 'assets/js/browser.min.js'%}"></script>
+  <script src="{%static 'assets/js/breakpoints.min.js'%}"></script>
+  <script src="{%static 'assets/js/util.js'%}"></script>
+  <script src="{%static 'assets/js/main.js'%}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+{% load static %}<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homepage</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+
+  <body class="home_body">
+    <nav class="navbar navbar-inverse flex-column flex-md-row">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" style="color: white" href="{% url 'home' %}"
+            >GenSim Utility</a
+          >
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active">
+            <a
+              href="{% url 'home' %}"
+              style="color: white"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="{%url 'overview' %}"
+              style="color: white"
+              >Overview</a
+            >
+          </li>
+          <li>
+            <a
+              href="{% url 'dataset' %}"
+              style="color: white"
+              >Datasets</a
+            >
+          </li>
+          <li><a href="{% url 'admin:login' %}"style="color:white;">Login</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div
+      class="jumbotron text-center"
+      style="background-color: rgba(54, 53, 65, 0.534)"
+    >
+      <h2 style="color: white">Homepage</h2>
+    </div>
+    <hr style="width: 75%" />
+    <div id="intro">
+      <h1>Introduction</h1>
+      <p>
+        Dummy texts are also used to demonstrate the shape of different fonts
+        and for layout purposes. They usually do not make sense in terms of
+        content. Due to their widespread function as filler text for the layout,
+        illegibility is particularly important, since human perception is
+        geared, among other things, to recognizing certain patterns and
+        repetitions. If the distribution of the letters and the length of the
+        "words" is arbitrary, nothing distracts from assessing the impact and
+        legibility of different fonts (typography) and the distribution of the
+        text on the page (layout or type area). Therefore, dummy texts usually
+        consist of a more or less arbitrary sequence of words or syllables.
+        Repetitive patterns cannot spoil the overall impression and fonts can
+        thus be better compared with one another. It is of course an advantage
+        if the dummy text appears halfway realistic so that the effect of the
+        layout of the subsequent publication is not impaired.
+      </p>
+    </div>
+  </body>
+</html>

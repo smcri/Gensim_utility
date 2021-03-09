@@ -1,0 +1,80 @@
+{% load static %}<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Overview</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static 'css/overview.css' %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="{%static 'js/overview.js' %}"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse flex-column flex-md-row" >
+    <div class="container-fluid" >
+      <div class="navbar-header">
+        <a class="navbar-brand" class=nav_button href="{% url 'home' %}">GenSim Utility</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li ><a class=nav_button href="{%url 'home' %}" >Home</a></li>
+        <li class="active"><a href="{%url 'overview' %}" >Overview</a></li>
+        <li><a class=nav_button href="{% url 'admin:login' %}"style="color:white;">Login</a></li>
+        <li><a class=nav_button href="{% url 'dataset' %}" >Datasets</a></li>
+      </ul>
+    </div>
+</nav>
+<div class="jumbotron text-center" id=jumbo >
+    <h2 >Similarity: An Overview</h2>
+</div>
+  <hr style="width:75%;"/>
+
+  
+  <div id="carousel-example-generic" class="carousel slide">
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li >
+      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="5"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="6"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="7"></li>
+    </ol>
+
+
+    <div class="carousel-inner">
+        
+        <div class="item active">
+            <img class=car_img src="http://placehold.it/1200x300" alt="1" />
+            <div class="carousel-caption describe clickable">
+                <h1 >Cosine Similarity Index</h1>
+            </div>
+        </div>
+        {% for blog in blogs %}
+          <div class="item">
+              <img class=car_img   src="http://placehold.it/1200x300" alt="2" />
+              <div class="carousel-caption describe clickable">
+                  <h1 >{{ blog.name }}</h1>
+      
+              </div>
+          </div>
+
+          {% endfor %}
+    </div>
+
+
+  
+    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+      <span class="icon-prev"></span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+      <span class="icon-next"></span>
+    </a>
+  </div>
+  
+
+
+</body>
+</html>
