@@ -16,7 +16,7 @@ from django.http import HttpResponse
 import mpld3
 import urllib,base64
 
-sys.path.append('/home/aadharsh/seproject/Gensim_Utility/myproject/gensimutility')
+sys.path.append('C:/Users/sahil/PycharmProjects/Gensim_utility/myproject/gensimutility')
 
 from simi import ret_graph
 from .models import blog
