@@ -94,7 +94,7 @@ def sim_graph(request):
 	string = base64.b64encode(buf.read())
 	uri2 = urllib.parse.quote(string)
 
-	return render(request,'simi.html',{'data':uri, 'data2':uri2})
+	return render(request,'result.html',{'data':uri, 'data2':uri2})
 
 #def login(request):
 #    my_login = {'login_tag':'\0'}
