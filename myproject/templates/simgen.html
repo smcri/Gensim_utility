@@ -2,11 +2,12 @@
 <html>
 
 <head>
-  <title>GenSim: Visualisation</title>
+
+  <title>GenSim: Similarity Generation</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/css/result.css" />
+  <link rel="stylesheet" href="assets/css/simgen.css" />
   <script src="assets/js/simgen.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -33,40 +34,101 @@
       <li><a href="aboutus.html">About Us</a></li>
     </ul>
   </nav>
+
   <!-- Banner -->
-  <section class="banner">
+  <section class="banner half">
     <article>
       <img src="images/dtbg.jpg" alt="" />
       <div class="inner">
         <header>
           <h3><b>Similarity Generation</b></h3>
-          <h2 id="ovheader">Visualisation</h2>
+          <h2 id="ovheader">Choose Datasets</h2>
         </header>
       </div>
     </article>
   </section>
 
   <section id="outerbox" class="wrapper">
-    <h2 class="pcentre">Important steps of the process </h2>
+    <h2 id="outerh2" class="pcentre">Choose a pair of Datasets</h2>
     <div class="grid-style">
       <div id="innerbox1">
-        <h2 class="pcentre">Dataset 1 </h2>
-        <div class="img-wrap">
-          <img src="images/photo.jpg" />
-        </div>
+        <div class="panel">
+          <h2 id="innerh2" class="pcentre">Choose #1 from existing:</h2>
+          <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Choose
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li id="dsName"><button class="dropdown-item" onclick="chose()">Dataset Name</button></li>
+            </ul>
+            <form method="POST">
+            <input type="text" id="choosen" readonly>
+            <button class="btn btn-primary" type="button" onclick="confirm1()">
+              Submit
+            </button>
+            </form>
+          </div>
 
+          <button data-toggle="collapse" data-target="#d1" class="btn-primary">+Description</button>
+
+          <div id="d1" class="collapse">
+            Lorem ipsum dolor text....
+          </div>
+
+        </div>
+        <br>
+        <h2 class="pcentre">OR</h2>
+        <div class="urlbox" id="urlbox1">
+          <label for="url">Import Dataset #1</label>
+          <input type="url" name="url" id="url" placeholder="https://example.com" pattern="https://.*" size="30"
+            required class="urlfield">
+        </div>
       </div>
       <div id="innerbox2">
-        <h2 class="pcentre">Dataset 2 </h2>
-        <div class="img-wrap">
-          <img src="images/dtbg.jpg" />
+        <div class="panel">
+          <h2 id="innerh2" class="pcentre">Choose #2 from existing:</h2>
+          <div class="dropdown ">
+            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Choose
+            </button>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li id="dsName2"><button class="dropdown-item" onclick="chose2()">Dataset Name</button></li>
+          </ul>
+          <form method="POST">
+          <input type="text" id="choosen2" readonly>
+          <button class="btn btn-primary" type="button" onclick="confirm2()">
+            Submit
+          </button>
+          </form>
+        </div>
+          <button data-toggle="collapse" data-target="#d2" class="btn-primary">+Description</button>
+
+          <div id="d2" class="collapse">
+            Lorem ipsum dolor text....
+          </div>
+
+        </div>
+        <br>
+        <h2 class="pcentre">OR</h2>
+        <div class="urlbox" id="urlbox2">
+          <label for="url">Import Dataset #2</label>
+          <input type="url" name="url" id="url" placeholder="https://example.com" pattern="https://.*" size="30"
+            required class="urlfield">
         </div>
       </div>
     </div>
     <div class="pcentre">
-      <button class="btn-lg btn-primary" type="button" onclick="showresult()">Download Report</button>
+      <form method="POST">
+        <input type="text" id="dset1" readonly>
+        <input type="text" id="dset2" readonly>
+      <button class="btn-lg btn-primary" type="button" onclick="showresult()">Generate Result</button>
+    </form>
     </div>
   </section>
+
 
 
   <!-- Footer -->
@@ -89,7 +151,6 @@
   <script src="assets/js/skel.min.js"></script>
   <script src="assets/js/util.js"></script>
   <script src="assets/js/main.js"></script>
-
 </body>
 
 </html>
