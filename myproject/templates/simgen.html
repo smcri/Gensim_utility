@@ -53,73 +53,94 @@
     <div class="grid-style">
       <div id="innerbox1">
         <div class="panel">
-          <h2 id="innerh2" class="pcentre">Choose #1 from existing:</h2>
-          <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Choose
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <li id="dsName"><button class="dropdown-item" onclick="chose()">Dataset Name</button></li>
-            </ul>
-            <form method="POST">
-            <input type="text" id="choosen" readonly>
-            <button class="btn btn-primary" type="button" onclick="confirm1()">
-              Submit
-            </button>
-            </form>
+          <form method="POST">
+          <h2 id="innerh2" class="pcentre">Choose dataset #1</h2>
+
+          <div class="boxes">
+            <input type="radio" name="toggle1" id="one" onclick="dtoggle1()">
+            <label for="one">Choose existing</label>
+          
+            <input type="radio" name="toggle1" id="two" onclick="utoggle1()">
+            <label for="two">Import new</label>
           </div>
 
+        <div id="ddone" class="boxes">
+          <div >
+            <select id = "pd1" name="pd2">
+              <option value = "1">one</option>
+              <option value = "2">two</option>
+              <option value = "3">three</option>
+              <option value = "4">four</option>
+            </select>
+          </div>
+          <br>
           <button data-toggle="collapse" data-target="#d1" class="btn-primary">+Description</button>
 
           <div id="d1" class="collapse">
             Lorem ipsum dolor text....
           </div>
+        </div>
 
-        </div>
-        <br>
-        <h2 class="pcentre">OR</h2>
-        <div class="urlbox" id="urlbox1">
-          <label for="url">Import Dataset #1</label>
-          <input type="url" name="url" id="url" placeholder="https://example.com" pattern="https://.*" size="30"
-            required class="urlfield">
-        </div>
-      </div>
-      <div id="innerbox2">
-        <div class="panel">
-          <h2 id="innerh2" class="pcentre">Choose #2 from existing:</h2>
-          <div class="dropdown ">
-            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Choose
-            </button>
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <li id="dsName2"><button class="dropdown-item" onclick="chose2()">Dataset Name</button></li>
-          </ul>
-          <form method="POST">
-          <input type="text" id="choosen2" readonly>
-          <button class="btn btn-primary" type="button" onclick="confirm2()">
+          <div class="urlbox" id="urlbox1">
+            <label for="url1">Import Dataset #1</label>
+            <input type="url" name="url" id="url1" placeholder="https://example.com" pattern="https://.*" size="30"
+              required class="urlfield">
+          </div>
+          <br>
+          <div class="boxes">
+          <button class="btn btn-primary" type="button" onclick="confirm1()">
             Submit
           </button>
-          </form>
         </div>
+        </form>
+        </div> 
+      </div>
+
+
+
+      <div id="innerbox2">
+        <div class="panel">
+          <form method="POST">
+          <h2 id="innerh2" class="pcentre">Choose dataset #2</h2>
+
+          <div class="boxes">
+            <input type="radio" name="toggle2" id="3rd" onclick="dtoggle2()">
+            <label for="3rd">Choose existing</label>
+          
+            <input type="radio" name="toggle2" id="4th" onclick="utoggle2()">
+            <label for="4th">Import new</label>
+          </div>
+
+        <div id="ddtwo" class="boxes">
+          <div>
+            <select id = "pd2" name="pd2">
+              <option value = "1">one</option>
+            </select>
+          </div>
+          <br>
           <button data-toggle="collapse" data-target="#d2" class="btn-primary">+Description</button>
 
           <div id="d2" class="collapse">
             Lorem ipsum dolor text....
           </div>
+        </div>
 
+          <div class="urlbox" id="urlbox2">
+            <label for="url2">Import Dataset #2</label>
+            <input type="url" name="url" id="url2" placeholder="https://example.com" pattern="https://.*" size="30"
+              required class="urlfield">
+          </div>
+          <br>
+          <div class="boxes">
+          <button class="btn btn-primary" type="button" onclick="confirm2()">
+            Submit
+          </button>
         </div>
-        <br>
-        <h2 class="pcentre">OR</h2>
-        <div class="urlbox" id="urlbox2">
-          <label for="url">Import Dataset #2</label>
-          <input type="url" name="url" id="url" placeholder="https://example.com" pattern="https://.*" size="30"
-            required class="urlfield">
-        </div>
-      </div>
+          </form>
     </div>
+    </div>
+    </div>
+
     <div class="pcentre">
       <form method="POST">
         <input type="text" id="dset1" readonly>
