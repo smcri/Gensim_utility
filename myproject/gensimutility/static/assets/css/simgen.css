@@ -2169,7 +2169,7 @@ input[type="button"],
 button,
 .button {
   -moz-appearance: none;
-  -webkit-appearance: none;
+  /* -webkit-appearance: none; */
   -ms-appearance: none;
   appearance: none;
   -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
@@ -4657,13 +4657,17 @@ label {
   background-color: rgb(232, 222, 236);
 }
 
-.urlbox {
-  margin: 1rem;
+#ddone, #ddtwo {
+  display: none;
+}
+#urlbox1, #urlbox2 {
+  display: none;
+  padding: 1rem;
 }
 
 .panel {
-  margin: 1rem;
-  padding: 1rem;
+  margin: 0.5rem;
+  padding: 0.5rem;
 }
 
 #outerbox {
@@ -4685,6 +4689,10 @@ label {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   text-decoration: solid;
+}
+
+.boxes{
+  margin: 1rem;
 }
 
 @media screen and (max-width: 1680px) {
@@ -4718,3 +4726,4 @@ label {
     max-width: 300px;
   }
 }
+
