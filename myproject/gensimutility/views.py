@@ -23,7 +23,67 @@ blogId = ''
 
 # Create your views here.
 
+
 context = {}
+
+def norm(x):
+    square = [number**2 for number in x]
+    Sum = sum(square)
+    return math.sqrt(Sum)
+
+def cosine(x,y,path):
+	prod = 0
+	for i in path:
+		prod = prod + x[i[0]]*y[i[1]]
+	return prod/(norm(x)*norm(y))
+            
+
+def eucli(x,y,path):
+	sume = 0
+	for i in path:
+		sume = sume + abs(x[i[0]] - y[i[1]])**2
+	return math.sqrt(sume)
+
+def pearson(x,y,path):
+	sump = 0
+	for i in path:
+		sump = sump + ((x[i[0]] - y[i[1]])**2)/y[i[1]]
+	return sump
+
+def chebyshev(x,y,path):
+	max = abs(x[1] - y[1])
+	for i in path:
+		if(abs(x[i[0]] - y[i[1]])>max):
+			max = abs(x[i[0]] - y[i[1]])
+	return max
+
+def soergel(x,y,path):
+	sum1 = 0
+	sum2 = 0
+	for i in path:
+		sum1 = sum1 + abs(x[i[0]] - y[i[1]])
+		sum2 = sum2 + max(x[i[0]],y[i[1]])
+	return sum1/sum2
+
+def matusita(x,y,path):
+	summ = 0
+	for i in path:
+		summ = summ + (math.sqrt(x[i[0]]) - math.sqrt(y[i[1]]))**2
+	return math.sqrt(summ)
+
+def divergence(x,y,path):
+	sum1 = 0
+	sum2 = 0
+	for i in path:
+		sum1 = sum1 + (x[int(i[0])]- y[int(i[1])])**2
+		sum2 = sum2 + (x[int(i[0])]+ y[int(i[1])])**2
+	return 2*(sum1/sum2)
+
+def graphrender(buf):
+	fig.savefig(buf,format='png')
+	buf.seek(0)
+	string = base64.b64encode(buf.read())
+	return string
 
 def title(request):
     return HttpResponse("Home Page")
@@ -69,32 +129,132 @@ def learnmore(request):
 def sim_graph(request):
 #	context['graph'] = ret_graph()
 	#print(datasets.path)
+	global fig
+	global distance
+
+
 	dataset = datasets.objects.get(id=1)
-	path = getattr(dataset,'path')
-	df1 = pd.read_csv(path,parse_dates=["timestamp"], index_col="timestamp")
+	path1 = getattr(dataset,'path')
+	df1 = pd.read_csv(path1,parse_dates=["timestamp"], index_col="timestamp")
 
 	print(df1)
 	df1[df1.columns].plot(kind='line')
 	fig = plt.gcf()
 
-	buf = io.BytesIO()
-	fig.savefig(buf,format='png')
-	buf.seek(0)
-	string = base64.b64encode(buf.read())
-	uri = urllib.parse.quote(string)
+#	buf = io.BytesIO()
+#	fig.savefig(buf,format='png')
+#	buf.seek(0)
+#	string = base64.b64encode(buf.read())
+	uri = urllib.parse.quote(graphrender(io.BytesIO()))
 
 	df1_resample = df1[df1.columns].resample('D').mean()
 	df1_resample = df1_resample.interpolate()
 	df1_resample.plot(kind='line',figsize=(20,10))
 	fig = plt.gcf()
 
-	buf = io.BytesIO()
-	fig.savefig(buf,format='png')
-	buf.seek(0)
-	string = base64.b64encode(buf.read())
-	uri2 = urllib.parse.quote(string)
+#	buf = io.BytesIO()
+#	fig.savefig(buf,format='png')
+#	buf.seek(0)
+#	string = base64.b64encode(buf.read())
+	uri2 = urllib.parse.quote(graphrender(io.BytesIO()))
 
-	return render(request,'result.html',{'data':uri, 'data2':uri2})
+	df1_resample.plot(kind='bar',figsize=(20,10))
+	fig = plt.gcf()
+
+#	buf = io.BytesIO()
+#	fig.savefig(buf,format='png')
+#	buf.seek(0)
+#	string = base64.b64encode(buf.read())
+	uri3 = urllib.parse.quote(graphrender(io.BytesIO()))
+
+	plt.clf()
+
+	matrix_corr = df1_resample.corr()
+	ax = sns.heatmap(
+    matrix_corr, 
+    vmin=-1, vmax=1, center=0,
+    cmap=sns.diverging_palette(20, 220, n=200),
+    square=True)
+
+	ax.set_xticklabels(ax.get_xticklabels(),rotation=45,horizontalalignment='right')
+	fig = plt.gcf()
+
+	uri4 = urllib.parse.quote(graphrender(io.BytesIO()))
+
+	df1_resample_combine = df1_resample.take([1],axis=1)
+	for i in range(len(df1_resample)):
+		df1_resample_combine[i:i+1] = np.average(df1_resample[i:i+1],axis=1, weights=(1*df1_resample.var()+0.0*df1_resample.mean()))
+	df1_resample_combine.plot(kind='line',figsize=(20,10))
+	fig = plt.gcf()
+
+	uri5 = urllib.parse.quote(graphrender(io.BytesIO()))
+
+	dataset = datasets.objects.get(id=2)
+	path1 = getattr(dataset,'path')
+	df2 = pd.read_csv(path1,parse_dates=["date"],index_col="date")
+
+	df2[df2.columns].plot(kind='line')
+	fig = plt.gcf()
+
+	uri6 = urllib.parse.quote(graphrender(io.BytesIO()))
+
+	df2_resample = df2[df2.columns].resample('1H').mean()
+	df2_resample = df2_resample.interpolate()
+	df2_resample.plot(kind='line',figsize=(20,10))
+	fig = plt.gcf()
+
+	uri7 = urllib.parse.quote(graphrender(io.BytesIO()))
+
+	df2_resample.plot(kind='bar',figsize=(20,10))
+	fig = plt.gcf()
+
+	uri8 = urllib.parse.quote(graphrender(io.BytesIO()))
+
+	plt.clf()
+
+	matrix_corr = df2_resample.corr()
+
+	ax = sns.heatmap(matrix_corr, vmin=-1, vmax=1, center=0,cmap=sns.diverging_palette(20, 220, n=200),square=True)
+	ax.set_xticklabels(ax.get_xticklabels(),rotation=45,horizontalalignment='right');
+	fig = plt.gcf()
+
+	uri9 = urllib.parse.quote(graphrender(io.BytesIO()))
+
+	#plt.clf()
+
+	#flights = sns.load_dataset("flights")
+	#flights = flights.pivot("month", "year", "passengers")
+	#ax = sns.heatmap(flights)
+	#fig = plt.gcf()
+
+	#uri10 = urllib.parse.quote(graphrender(io.BytesIO()))
+
+	df2_resample_combine = df2_resample.take([1],axis=1)
+	for i in range(len(df2_resample)):
+		df2_resample_combine[i:i+1] = np.average(df2_resample[i:i+1],axis=1, weights=(1*df2_resample.var()+0*df2_resample.mean()))
+	df2_resample_combine.plot(kind='line',figsize=(20,10))
+	fig = plt.gcf()
+	uri10 = urllib.parse.quote(graphrender(io.BytesIO()))
+	
+	rowmean2 = np.array(df1_resample_combine)
+	rowmean3 = np.array(df2_resample_combine)
+
+	dataset2 = rowmean2
+	dataset3 = rowmean3
+
+	distance,path = fastdtw(dataset2, dataset3, dist=euclidean)
+	rlen = len(rowmean2) if len(rowmean2)<len(rowmean3) else len(rowmean3)
+
+
+	cos = cosine(dataset2,dataset3,path)
+	euc = eucli(dataset2,dataset3,path)
+	pea = pearson(dataset2,dataset3,path)
+	cheby = chebyshev(dataset2,dataset3,path)
+	soer = soergel(dataset2,dataset3,path)
+	matu = matusita(dataset2,dataset3,path)
+	dive = divergence(dataset2,dataset3,path)
+
+	return render(request,'result.html',{'data':uri, 'data2':uri2, 'data3':uri3, 'data4':uri4, 'data5':uri5, 'data6':uri6, 'data7':uri7, 'data8':uri8, 'data9':uri9, 'data10':uri10, 'cos':cos, 'euc':euc, 'pea':pea, 'cheby':cheby, 'soer':soer, 'matu':matu, 'dive':dive})
 
 #def login(request):
 #    my_login = {'login_tag':'\0'}
