@@ -6,6 +6,8 @@ class blog(models.Model):
 	name = models.CharField(max_length=30, unique=True)
 	content = models.TextField(max_length=4000, unique=True)
 	description = models.TextField(max_length=200000)
+	disadvantages = models.TextField(max_length=200000)
+	applications = models.TextField(max_length=200000)
 	written_by = models.CharField(max_length=30)
 	created_at = models.DateTimeField(auto_now_add=True)
 
