@@ -66,18 +66,19 @@
 
         <div id="ddone" class="boxes">
           <div >
-            <select id = "pd1" name="pd2">
-              <option value = "1">one</option>
-              <option value = "2">two</option>
-              <option value = "3">three</option>
-              <option value = "4">four</option>
+            <select id = "pd1" name="pd1" onchange="setCollapsible()">
+            {% for dataset in dataset_set %}
+              <option value = {{dataset.id}}>{{dataset.name}}</option>
+            {% endfor %}
             </select>
           </div>
           <br>
           <button data-toggle="collapse" data-target="#d1" class="btn-primary">+Description</button>
 
           <div id="d1" class="collapse">
-            Lorem ipsum dolor text....
+          	{% for dataset in dataset_set %}
+          	<div class="hidden" id={{dataset.id}}>{{dataset.description}}</div><br>
+            {% endfor %}
           </div>
         </div>
 
@@ -113,15 +114,19 @@
 
         <div id="ddtwo" class="boxes">
           <div>
-            <select id = "pd2" name="pd2">
-              <option value = "1">one</option>
+            <select id = "pd2" name="pd2" onchange="setCollapsible()">
+              {% for dataset in dataset_set %}
+              <option value = {{dataset.id}}>{{dataset.name}}</option>
+            {% endfor %}
             </select>
           </div>
           <br>
           <button data-toggle="collapse" data-target="#d2" class="btn-primary">+Description</button>
 
           <div id="d2" class="collapse">
-            Lorem ipsum dolor text....
+            {% for dataset in dataset_set %}
+          	<div class="hidden" id={{dataset.id}}>{{dataset.description}}</div><br>
+            {% endfor %}
           </div>
         </div>
 
@@ -143,9 +148,10 @@
 
     <div class="pcentre">
       <form method="POST">
-        <input type="text" id="dset1" readonly>
-        <input type="text" id="dset2" readonly>
-      <button class="btn-lg btn-primary" type="button" onclick="showresult()">Generate Result</button>
+      	{% csrf_token %}
+        <input type="text" id="dset1" name="dset1" readonly>
+        <input type="text" id="dset2" name="dset2" readonly>
+      <button class="btn-lg btn-primary" type="submit" onclick="showresult()">Generate Result</button>
     </form>
     </div>
   </section>

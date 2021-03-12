@@ -103,13 +103,14 @@ def Main(request):
 
 def dataset(request):
    my_data = {'Data_tag':'\0'}
+   dataset_set = datasets.objects.all()
    if request.method == 'POST':
-   		url1 = request.POST['url1']
-   		url2 = request.POST['url2']
+   		url1 = request.POST['dset1']
+   		url2 = request.POST['dset2']
    		print(url1)
    		print(url2)
    		return redirect('sim')
-   return render(request,'simgen.html', context = my_data)
+   return render(request,'simgen.html', {'dataset_set':dataset_set})
 
 def home(request):
     my_home = {'home_tag':'\0'}
@@ -147,6 +148,8 @@ def sim_graph(request):
 #	string = base64.b64encode(buf.read())
 	uri = urllib.parse.quote(graphrender(io.BytesIO()))
 
+	plt.clf()
+
 	df1_resample = df1[df1.columns].resample('D').mean()
 	df1_resample = df1_resample.interpolate()
 	df1_resample.plot(kind='line',figsize=(20,10))
@@ -157,6 +160,8 @@ def sim_graph(request):
 #	buf.seek(0)
 #	string = base64.b64encode(buf.read())
 	uri2 = urllib.parse.quote(graphrender(io.BytesIO()))
+
+	plt.clf()
 
 	df1_resample.plot(kind='bar',figsize=(20,10))
 	fig = plt.gcf()
@@ -181,6 +186,8 @@ def sim_graph(request):
 
 	uri4 = urllib.parse.quote(graphrender(io.BytesIO()))
 
+	plt.clf()
+
 	df1_resample_combine = df1_resample.take([1],axis=1)
 	for i in range(len(df1_resample)):
 		df1_resample_combine[i:i+1] = np.average(df1_resample[i:i+1],axis=1, weights=(1*df1_resample.var()+0.0*df1_resample.mean()))
@@ -188,6 +195,8 @@ def sim_graph(request):
 	fig = plt.gcf()
 
 	uri5 = urllib.parse.quote(graphrender(io.BytesIO()))
+
+	plt.clf()
 
 	dataset = datasets.objects.get(id=2)
 	path1 = getattr(dataset,'path')
@@ -198,6 +207,8 @@ def sim_graph(request):
 
 	uri6 = urllib.parse.quote(graphrender(io.BytesIO()))
 
+	plt.clf()
+
 	df2_resample = df2[df2.columns].resample('1H').mean()
 	df2_resample = df2_resample.interpolate()
 	df2_resample.plot(kind='line',figsize=(20,10))
@@ -205,10 +216,14 @@ def sim_graph(request):
 
 	uri7 = urllib.parse.quote(graphrender(io.BytesIO()))
 
+	plt.clf()
+
 	df2_resample.plot(kind='bar',figsize=(20,10))
 	fig = plt.gcf()
 
 	uri8 = urllib.parse.quote(graphrender(io.BytesIO()))
+
+	plt.clf()
 
 	plt.clf()
 
@@ -219,6 +234,8 @@ def sim_graph(request):
 	fig = plt.gcf()
 
 	uri9 = urllib.parse.quote(graphrender(io.BytesIO()))
+
+	plt.clf()
 
 	#plt.clf()
 
@@ -235,6 +252,8 @@ def sim_graph(request):
 	df2_resample_combine.plot(kind='line',figsize=(20,10))
 	fig = plt.gcf()
 	uri10 = urllib.parse.quote(graphrender(io.BytesIO()))
+
+	plt.clf()
 	
 	rowmean2 = np.array(df1_resample_combine)
 	rowmean3 = np.array(df2_resample_combine)

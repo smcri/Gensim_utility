@@ -1,7 +1,3 @@
-function showresult() {
-  window.open("result.html", "_blank");
-}
-
 function getSelectedOption(sel) {
   var opt;
   for ( var i = 0, len = sel.options.length; i < len; i++ ) {
@@ -11,6 +7,15 @@ function getSelectedOption(sel) {
       }
   }
   return opt;
+}
+
+function setCollapsible(){
+
+  var ele1=document.getElementById('pd1');
+  var id = getSelectedOption(ele1).value;
+
+  document.getElementById(id.toString()).style.display = 'block';
+
 }
 
 function dtoggle1(){
