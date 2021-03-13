@@ -15,11 +15,16 @@ from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from django.http import HttpResponse
 import mpld3
 import urllib,base64
+from django.core.validators import URLValidator
 
 #from simi import ret_graph
 from .models import blog,datasets,team
 
+validate = URLValidator()
+
 blogId = ''
+url1 = ''
+url2 = ''
 
 # Create your views here.
 
@@ -105,10 +110,32 @@ def dataset(request):
    my_data = {'Data_tag':'\0'}
    dataset_set = datasets.objects.all()
    if request.method == 'POST':
+   		global url1
+   		global url2
    		url1 = request.POST['dset1']
    		url2 = request.POST['dset2']
    		print(url1)
    		print(url2)
+   		try:
+   			validate(url1)
+   			print("String is a valid URL")
+   		except:
+   			tempo = url1
+   			print(tempo)
+   			tempo2 = datasets.objects.get(name=tempo)
+   			url1 = getattr(tempo2,'path')
+   			print("String is not a valid URL")
+
+   		try:
+   			validate(url2)
+   			print("String is a valid URL")
+   		except:
+   			tempo = url2
+   			tempo2 = datasets.objects.get(name=tempo)
+   			url2 = getattr(tempo2,'path')
+   			print("String is not a valid URL")
+
+
    		return redirect('sim')
    return render(request,'simgen.html', {'dataset_set':dataset_set})
 
@@ -136,7 +163,7 @@ def sim_graph(request):
 
 	dataset = datasets.objects.get(id=1)
 	path1 = getattr(dataset,'path')
-	df1 = pd.read_csv(path1,parse_dates=["timestamp"], index_col="timestamp")
+	df1 = pd.read_csv(url1,parse_dates=["timestamp"], index_col="timestamp")
 
 	print(df1)
 	df1[df1.columns].plot(kind='line')
