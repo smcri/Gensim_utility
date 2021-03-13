@@ -227,7 +227,7 @@ def sim_graph(request):
 
 	dataset = datasets.objects.get(id=2)
 	path1 = getattr(dataset,'path')
-	df2 = pd.read_csv(path1,parse_dates=["date"],index_col="date")
+	df2 = pd.read_csv(url2,parse_dates=["date"],index_col="date")
 
 	df2[df2.columns].plot(kind='line')
 	fig = plt.gcf()
