@@ -29,6 +29,7 @@
   <nav id="menu">
     <ul class="links">
       <li><a href="{% url 'home' %}">Home</a></li>
+      <li><a href="{% url 'admin:login' %}">Admin</a></li>
       <li><a href="{% url 'overview' %}">Overview</a></li>
       <li><a href="{% url 'dataset' %}">Similarity Generation</a></li>
       <li><a href="{% url 'about' %}">About Us</a></li>
@@ -66,18 +67,17 @@
 
         <div id="ddone" class="boxes">
           <div >
-            <select id = "pd1" name="pd1" onchange="setCollapsible()">
+            <select id = "pd1" name="pd1" >
             {% for dataset in dataset_set %}
               <option value = {{dataset.id}}>{{dataset.name}}</option>
             {% endfor %}
             </select>
           </div>
           <br>
-          <button data-toggle="collapse" data-target="#d1" class="btn-primary">+Description</button>
-
-          <div id="d1" class="collapse">
+          <button class="accordion" id="ac1" onclick="actoggle1()">Description</button>
+          <div id="d1" >
           	{% for dataset in dataset_set %}
-          	<div class="hidden" id={{dataset.id}}>{{dataset.description}}</div><br>
+          	<div id={{dataset.id}}><p>{{dataset.description}}</p></div><br>
             {% endfor %}
           </div>
         </div>
@@ -114,18 +114,17 @@
 
         <div id="ddtwo" class="boxes">
           <div>
-            <select id = "pd2" name="pd2" onchange="setCollapsible()">
+            <select id = "pd2" name="pd2" >
               {% for dataset in dataset_set %}
-              <option value = {{dataset.id}}>{{dataset.name}}</option>
-            {% endfor %}
-            </select>
+                <option value = {{dataset.id}}>{{dataset.name}}</option>
+              {% endfor %}
+              </select>
           </div>
           <br>
-          <button data-toggle="collapse" data-target="#d2" class="btn-primary">+Description</button>
-
-          <div id="d2" class="collapse">
-            {% for dataset in dataset_set %}
-          	<div class="hidden" id={{dataset.id}}>{{dataset.description}}</div><br>
+          <button class="accordion" id="ac2" onclick="actoggle2()">Description</button>
+          <div id="d2" >
+          	{% for dataset in dataset_set %}
+          	<div id={{dataset.id}}><p>{{dataset.description}}</p></div><br>
             {% endfor %}
           </div>
         </div>

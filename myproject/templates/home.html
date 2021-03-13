@@ -37,6 +37,7 @@
     <nav id="menu">
       <ul class="links">
         <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'admin:login' %}">Admin</a></li>
         <li><a href="{% url 'overview' %}">Overview</a></li>
         <li><a href="{% url 'dataset' %}">Similarity Generation</a></li>
         <li><a href="{% url 'about' %}">About Us</a></li>
@@ -59,7 +60,7 @@
     <div class="inner">
       <div id="intr">
         <div class="box">
-          <div class="content">
+          <div class="content" id="intr2">
             <header class="align-center">
               <h2>Introduction</h2>
             </header>
@@ -107,8 +108,7 @@
                 </p>
                 <footer class="align-center">
                   <a href="{%url 'overview' %}" class="button special"
-                    >Overview</a
-                  >
+                    >Overview</a>
                 </footer>
               </div>
             </div>

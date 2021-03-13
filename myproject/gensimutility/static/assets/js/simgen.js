@@ -9,14 +9,14 @@ function getSelectedOption(sel) {
   return opt;
 }
 
-function setCollapsible(){
+// function setCollapsible(){
 
-  var ele1=document.getElementById('pd1');
-  var id = getSelectedOption(ele1).value;
+//   var ele1=document.getElementById('pd1');
+//   var id = getSelectedOption(ele1).value;
 
-  document.getElementById(id.toString()).style.display = 'block';
+//   document.getElementById(id.toString()).style.display = 'block';
 
-}
+// }
 
 function dtoggle1(){
   var ub1=document.getElementById('urlbox1');
@@ -100,4 +100,31 @@ function confirm2(){
   else{
     document.getElementById('dset2').value = ele2.value;
   }
+}
+
+function actoggle1(){
+  var acc=document.getElementById('ac1');
+  acc.classList.toggle("active");
+  var panel = document.getElementById('d1');
+
+  if (panel.style.maxHeight) {
+    panel.style.maxHeight = null;
+  } else {
+    panel.style.maxHeight = panel.scrollHeight + "px";
+  }
+
+}
+
+function actoggle2(){
+
+  var acc=document.getElementById('ac2');
+  acc.classList.toggle("active");
+  var panel = document.getElementById('d2');
+
+  if (panel.style.maxHeight) {
+    panel.style.maxHeight = null;
+  } else {
+    panel.style.maxHeight = panel.scrollHeight + "px";
+  }
+
 }

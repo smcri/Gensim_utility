@@ -12,11 +12,7 @@ ul.links li.active {
   border-color: #007bff;
 }
 
-#intr {
-  padding-top: 2rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
+
 
 
 
@@ -4689,4 +4685,13 @@ body.is-mobile .banner > article {
     font-size: 3rem;
   }
 }
-
+#intr {
+  padding-top: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+#intr2 {
+  padding-top: 2rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
