@@ -2169,7 +2169,7 @@ input[type="button"],
 button,
 .button {
   -moz-appearance: none;
-  /* -webkit-appearance: none; */
+  -webkit-appearance: none;
   -ms-appearance: none;
   appearance: none;
   -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
@@ -4300,7 +4300,7 @@ body.subpage {
 /* Banner */
 
 .banner {
-  background-color: #8a4680;
+  background-color: #000000;
   color: #e2d1df;
   padding: 8em 0;
   position: relative;
@@ -4658,11 +4658,10 @@ label {
 }
 
 #ddone, #ddtwo {
-  display: none;
+  display: block;
 }
 #urlbox1, #urlbox2 {
   display: none;
-  padding: 1rem;
 }
 
 .panel {
@@ -4753,12 +4752,12 @@ label {
 .active:after {
   content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
-#d1, #d2{
+.d1,.d2{
   padding: 0 0px;
   background-color: white;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.2s ease-out;
+  transition: max-height 0.1s ease-out;
 }
 
 /* Style the accordion panel. Note: hidden by default */
