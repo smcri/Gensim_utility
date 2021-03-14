@@ -73,7 +73,7 @@ function confirm1(){
   var div1=document.getElementById('ddone');
     
     if(ele1.value !==""){
-      document.getElementById('dset1').value = ele1.value;
+      document.getElementById('dset1').value = getSelectedOption(ele1).innerText;
     }
     else{
       document.getElementById('dset1').value = ele2.value;
@@ -82,11 +82,12 @@ function confirm1(){
 
 function confirm2(){
   var ele1=document.getElementById('pd2');
+  console.log(ele1.value);
   var ele2=document.getElementById('url2');
   var div1=document.getElementById('ddtwo');
     
   if(ele1.value !==""){
-    document.getElementById('dset2').value = ele1.value;
+    document.getElementById('dset2').value = getSelectedOption(ele1).innerText;
   }
   else{
     document.getElementById('dset2').value = ele2.value;
@@ -109,8 +110,11 @@ function actoggle1(){
 function actoggle2(){
   var acc=document.getElementById('ac2');
   acc.classList.toggle("active");
-  var p=document.getElementById('pd2'); 
-  var panel = document.getElementById(p.value);
+  var p=document.getElementById('pd2');
+  var x = parseInt(p.value)
+  x = x+100
+  x = x.toString() 
+  var panel = document.getElementById(x);
 
   if (panel.style.maxHeight) {
     panel.style.maxHeight = null;
@@ -118,7 +122,7 @@ function actoggle2(){
     panel.style.maxHeight = panel.scrollHeight + "px";
   }
 }
-function toggle1(){
+/*function toggle1(){
   var list1=["ds1","ds2","ds3"];
   var acc=document.getElementById('ac1');
   acc.classList.add("active");
@@ -140,4 +144,4 @@ function toggle2(){
   var p=document.getElementById('pd2'); 
   var panel=document.getElementById(p.value);
   panel.style.maxHeight = panel.scrollHeight + "px";
-}
+}*/ 

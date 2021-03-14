@@ -50,6 +50,7 @@
   </section>
 
   <section id="outerbox" class="wrapper">
+
     <h2 id="outerh2" class="pcentre">Choose a pair of Datasets</h2>
     <div class="grid-style">
       <div id="innerbox1">
@@ -68,20 +69,20 @@
           <!-- <form method="POST"> -->
           <div>
             <select id="pd1" name="pd1" onchange="toggle1()">
-            <!-- {% for dataset in dataset_set %}
+            {% for dataset in dataset_set %}
               <option value = {{dataset.id}}>{{dataset.name}}</option>
-            {% endfor %} -->
-            <option value="ds1" >one</option>
+            {% endfor %}
+           <!-- <option value="ds1" >one</option>
             <option value="ds2">two</option>
-            <option value="ds3">three</option>
+            <option value="ds3">three</option> -->
             </select>
           </div>
           <br>
           <button class="accordion" id="ac1" onclick="actoggle1()">Description</button>
-          	<!-- {% for dataset in dataset_set %}
+          	{% for dataset in dataset_set %}
           	<div class="d1" id={{dataset.id}}><p>{{dataset.description}}</p></div>
-            {% endfor %} -->
-            <div class="d1" id="ds1">
+            {% endfor %}
+            <!-- <div class="d1" id="ds1">
               <p>One  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, voluptatem porro eius veritatis minus
               </p>
             </div>
@@ -92,7 +93,7 @@
             <div class="d1" id="ds3">
               <p>Three   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, voluptatem porro eius veritatis minus
               </p>
-            </div>
+            </div> -->
           <br>
             <button class="btn btn-primary" type="button" onclick="confirm1()">
               Submit
@@ -135,20 +136,20 @@
           <!-- <form method="POST"> -->
           <div>
             <select id="pd2" name="pd2" onchange="toggle2()" >
-              <!-- {% for dataset in dataset_set %}
+               {% for dataset in dataset_set %}
                 <option value = {{dataset.id}}>{{dataset.name}}</option>
-              {% endfor %} -->
-              <option value="ds4">four</option>
+              {% endfor %} 
+              <!--<option value="ds4">four</option>
               <option value="ds5">five</option>
-              <option value="ds6">six</option>
+              <option value="ds6">six</option> -->
               </select>
           </div>
           <br>
           <button class="accordion" id="ac2" onclick="actoggle2()">Description</button>
-          	<!-- {% for dataset in dataset_set %}
-          	<div class="d2" id={{dataset.id}}><p>{{dataset.description}}</p></div>
-            {% endfor %} -->
-            <div class="d2" id="ds4">
+          	{% for dataset in dataset_set %}
+          	<div class="d2" id={{dataset.id|add:"100"}}><p>{{dataset.description}}</p></div>
+            {% endfor %} 
+           <!-- <div class="d2" id="ds4">
               <p>Four   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, voluptatem porro eius veritatis minus
               </p>
             </div>
@@ -160,7 +161,7 @@
             <div class="d2" id="ds6">
               <p>Six   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, voluptatem porro eius veritatis minus
               </p>
-            </div>
+            </div> -->
           <br>
             <button class="btn btn-primary" type="button" onclick="confirm2()">
               Submit
