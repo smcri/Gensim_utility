@@ -73,7 +73,7 @@ def soergel(x,y,path):
 def matusita(x,y,path):
 	summ = 0
 	for i in path:
-		summ = summ + (math.sqrt(x[i[0]]) - math.sqrt(y[i[1]]))**2
+		summ = summ + (math.sqrt(math.fabs(x[i[0]])) - math.sqrt(math.fabs(y[i[1]])))**2
 	return math.sqrt(summ)
 
 def divergence(x,y,path):
@@ -163,7 +163,7 @@ def sim_graph(request):
 
 	dataset = datasets.objects.get(id=1)
 	path1 = getattr(dataset,'path')
-	df1 = pd.read_csv(url1,parse_dates=["timestamp"], index_col="timestamp")
+	df1 = pd.read_csv(url1,parse_dates=True, index_col=0)
 
 	print(df1)
 	df1[df1.columns].plot(kind='line')
@@ -227,7 +227,7 @@ def sim_graph(request):
 
 	dataset = datasets.objects.get(id=2)
 	path1 = getattr(dataset,'path')
-	df2 = pd.read_csv(url2,parse_dates=["date"],index_col="date")
+	df2 = pd.read_csv(url2,parse_dates=True,index_col=0)
 
 	df2[df2.columns].plot(kind='line')
 	fig = plt.gcf()
