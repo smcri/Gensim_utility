@@ -176,8 +176,22 @@ def sim_graph(request):
 	uri = urllib.parse.quote(graphrender(io.BytesIO()))
 
 	plt.clf()
+	
+	l = 1
+	r = 365*24
+	ans = l
+	while l<=r:
+		mid = int((l+r)/2)
+		df1_resample = df1[df1.columns].resample(str(mid)+'H').mean()
+		sz = int(len(df1_resample))
+		print(sz)
+		if sz<=150:
+			ans = sz
+			r = mid-1
+		elif sz>150:
+			l = mid+1
 
-	df1_resample = df1[df1.columns].resample('D').mean()
+#	df1_resample = df1[df1.columns].resample('D').mean()
 	df1_resample = df1_resample.interpolate()
 	df1_resample.plot(kind='line',figsize=(20,10))
 	fig = plt.gcf()
@@ -235,8 +249,22 @@ def sim_graph(request):
 	uri6 = urllib.parse.quote(graphrender(io.BytesIO()))
 
 	plt.clf()
+	
+	l = 1
+	r = 365*24
+	ans = l
+	while l<=r:
+		mid = int((l+r)/2)
+		df2_resample = df2[df2.columns].resample(str(mid)+'H').mean()
+		sz = int(len(df2_resample))
+		print(sz)
+		if sz<=150:
+			ans = sz
+			r = mid-1
+		elif sz>150:
+			l = mid+1
 
-	df2_resample = df2[df2.columns].resample('1H').mean()
+#	df2_resample = df2[df2.columns].resample('1H').mean()
 	df2_resample = df2_resample.interpolate()
 	df2_resample.plot(kind='line',figsize=(20,10))
 	fig = plt.gcf()

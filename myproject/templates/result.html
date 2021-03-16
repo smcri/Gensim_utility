@@ -53,6 +53,7 @@
       <div id="innerbox1">
         <h2 class="pcentre">Dataset 1 </h2>
         <div class="img-wrap">
+        	<div id="content">
           <img src="data:image/png;base64,{{ data }}" alt="" height="300" ,width="300">
           <img src="data:image/png;base64,{{ data2 }}" alt="" height="300" ,width="300">
           <img src="data:image/png;base64,{{ data3 }}" alt="" height="500" ,width="500">
@@ -65,22 +66,27 @@
           {{ soer }}<br>
           {{ matu }}<br>
           {{ dive }}<br>
+          </div>
+		<div id="editor"></div>
         </div>
 
       </div>
       <div id="innerbox2">
         <h2 class="pcentre">Dataset 2 </h2>
         <div class="img-wrap">
+        	<div id="content">
           <img src="data:image/png;base64,{{ data6 }}" alt="" height="300" ,width="300">
           <img src="data:image/png;base64,{{ data7 }}" alt="" height="300" ,width="300">
           <img src="data:image/png;base64,{{ data8 }}" alt="" height="300" ,width="300">
           <img src="data:image/png;base64,{{ data9 }}" alt="" height="300" ,width="300">
           <img src="data:image/png;base64,{{ data10 }}" alt="" height="300" ,width="300">
+          </div>
+		<div id="editor"></div>
         </div>
       </div>
     </div>
     <div class="pcentre">
-      <button class="btn-lg btn-primary" type="button" onclick="showresult()">Download Report</button>
+      <button class="btn-lg btn-primary" type="button" id="cmd">Download Report</button>
     </div>
   </section>
 
@@ -101,11 +107,29 @@
   </footer>
   <!-- Scripts -->
   <script src="{%static 'assets/js/jquery.min.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+
+<!--the script-->
+<script>
+var doc = new jsPDF();
+var specialElementHandlers = {
+    '#editor': function (element, renderer) {
+        return true;
+    }
+};
+
+$('#cmd').click(function () {
+    doc.fromHTML($('#content').html(), 15, 15, {
+        'width': 170,
+            'elementHandlers': specialElementHandlers
+    });
+    doc.save('sample-file.pdf');
+});
+</script>
   <script src="{%static 'assets/js/jquery.scrollex.min.js' %}"></script>
   <script src="{%static 'assets/js/skel.min.js' %}"></script>
   <script src="{%static 'assets/js/util.js' %}"></script>
   <script src="{%static 'assets/js/main.js' %}"></script>
-
 </body>
 
 </html>
