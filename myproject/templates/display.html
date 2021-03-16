@@ -47,15 +47,14 @@
             <div id="head">
               <h2>{{ req_blog.name }}</h2>
             </div>
-            {{req_blog.description}}
             <h3>Description</h3>
-            <p>Lorem ipsum dolor</p>
+            <p>{{req_blog.description}}</p>
             <h3>Advantages</h3>
-            <p>At vero ribus asperiores repellat.</p>
+            <p>{{req_blog.advantages}}</p>
             <h3>Disadvantages</h3>
-            <p>lorem</p>
+            <p>{{req_blog.disadvantages}}</p>
             <h3>Applications</h3>
-            <p>lorem</p>
+            <p>{{req_blog.applications}}</p>
           </div>
           <div id="pan-foot" class="panel-footer">Author : {{req_blog.written_by}}</div>
           <div id="pan-foot" class="panel-footer">Date : {{req_blog.created_at}}</div>
