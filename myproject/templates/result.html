@@ -49,44 +49,147 @@
 
   <section id="outerbox" class="wrapper">
     <h2 class="pcentre">Important steps of the process </h2>
-    <div class="grid-style">
-      <div id="innerbox1">
-        <h2 class="pcentre">Dataset 1 </h2>
-        <div class="img-wrap">
-        	<div id="content">
-          <img src="data:image/png;base64,{{ data }}" alt="" height="300" ,width="300">
-          <img src="data:image/png;base64,{{ data2 }}" alt="" height="300" ,width="300">
-          <img src="data:image/png;base64,{{ data3 }}" alt="" height="500" ,width="500">
-          <img src="data:image/png;base64,{{ data4 }}" alt="" height="500" ,width="500">
-          <img src="data:image/png;base64,{{ data5 }}" alt="" height="300" ,width="300">
-          {{ cos }}<br>
-          {{ euc }}<br>
-          {{ pea }}<br>
-          {{ cheby }}<br>
-          {{ soer }}<br>
-          {{ matu }}<br>
-          {{ dive }}<br>
-          </div>
-		<div id="editor"></div>
-        </div>
 
-      </div>
-      <div id="innerbox2">
-        <h2 class="pcentre">Dataset 2 </h2>
-        <div class="img-wrap">
-        	<div id="content">
-          <img src="data:image/png;base64,{{ data6 }}" alt="" height="300" ,width="300">
-          <img src="data:image/png;base64,{{ data7 }}" alt="" height="300" ,width="300">
-          <img src="data:image/png;base64,{{ data8 }}" alt="" height="300" ,width="300">
-          <img src="data:image/png;base64,{{ data9 }}" alt="" height="300" ,width="300">
-          <img src="data:image/png;base64,{{ data10 }}" alt="" height="300" ,width="300">
+    <div class="grid-style">
+      <div class="accordion">
+        
+        <input class="accordion__radio" type="radio" name="accordion-tabs" id="tab-111" checked/>
+        <label class="accordion__label" for="tab-111">Tab 1
+          <span class="accordion-tab--status"></span>
+        </label>
+        <div class="accordion__content">
+          <div class="accordion__content__image__container">
+            <img class="accordion__content__image" src="data:image/png;base64,{{ data }}" alt="placeholder alt text" />
           </div>
-		<div id="editor"></div>
+          
+        </div>
+        <input class="accordion__radio" type="radio" name="accordion-tabs" id="tab-112" />
+        <label class="accordion__label" for="tab-112">Tab 2
+          <span class="accordion-tab--status"></span>
+        </label>
+        <div class="accordion__content">
+          <div class="accordion__content__image__container">
+            <img class="accordion__content__image" src="data:image/png;base64,{{ data2 }}" alt="placeholder alt text" />
+          </div>
+          
+        </div>
+        <input class="accordion__radio" type="radio" name="accordion-tabs" id="tab-113" />
+        <label class="accordion__label" for="tab-113">Tab 3
+          <span class="accordion-tab--status"></span>
+        </label>
+        <div class="accordion__content">
+          <div class="accordion__content__image__container">
+            <img class="accordion__content__image" src="data:image/png;base64,{{ data3 }}" alt="placeholder alt text" />
+          </div>
+          
+        </div>
+      </div>
+
+      <div class="accordion">
+        <input class="accordion__radio" type="radio" name="accordion-tabs2" id="tab-121" checked/>
+        <label class="accordion__label" for="tab-121">Tab 1
+          <span class="accordion-tab--status"></span>
+        </label>
+        <div class="accordion__content">
+          <div class="accordion__content__image__container">
+            <img class="accordion__content__image" src="data:image/png;base64,{{ data6 }}" alt="placeholder alt text" />
+          </div>
+          
+        </div>
+        <input class="accordion__radio" type="radio" name="accordion-tabs2" id="tab-122" />
+        <label class="accordion__label" for="tab-122">Tab 2
+          <span class="accordion-tab--status"></span>
+        </label>
+        <div class="accordion__content">
+          <div class="accordion__content__image__container">
+            <img class="accordion__content__image" src="data:image/png;base64,{{ data7 }}" alt="placeholder alt text" />
+          </div>
+          
+        </div>
+        <input class="accordion__radio" type="radio" name="accordion-tabs2" id="tab-123" />
+        <label class="accordion__label" for="tab-123">Tab 3
+          <span class="accordion-tab--status"></span>
+        </label>
+        <div class="accordion__content">
+          <div class="accordion__content__image__container">
+            <img class="accordion__content__image" src="data:image/png;base64,{{ data8 }}" alt="placeholder alt text" />
+          </div>
+          
         </div>
       </div>
     </div>
+
+    <div class="grid-style">
+      <div class="accordion">
+        
+        <input class="accordion__radio" type="radio" name="accordion-tabs3" id="tab-211" checked/>
+        <label class="accordion__label" for="tab-211">Tab 1
+          <span class="accordion-tab--status"></span>
+        </label>
+        <div class="accordion__content">
+          <div class="accordion__content__image__container">
+            <img class="accordion__content__image" src="data:image/png;base64,{{ data }}" alt="placeholder alt text" />
+          </div>
+          
+        </div>
+        <input class="accordion__radio" type="radio" name="accordion-tabs3" id="tab-212" />
+        <label class="accordion__label" for="tab-212">Tab 2
+          <span class="accordion-tab--status"></span>
+        </label>
+        <div class="accordion__content">
+          <div class="accordion__content__image__container">
+            <img class="accordion__content__image" src="data:image/png;base64,{{ data2 }}" alt="placeholder alt text" />
+          </div>
+          
+        </div>
+        <input class="accordion__radio" type="radio" name="accordion-tabs3" id="tab-213" />
+        <label class="accordion__label" for="tab-213">Tab 3
+          <span class="accordion-tab--status"></span>
+        </label>
+        <div class="accordion__content">
+          <div class="accordion__content__image__container">
+            <img class="accordion__content__image" src="data:image/png;base64,{{ data3 }}" alt="placeholder alt text" />
+          </div>
+          
+        </div>
+      </div>
+
+      <div class="accordion">
+        <input class="accordion__radio" type="radio" name="accordion-tabs4" id="tab-221" checked/>
+        <label class="accordion__label" for="tab-221">Tab 1
+          <span class="accordion-tab--status"></span>
+        </label>
+        <div class="accordion__content">
+          <div class="accordion__content__image__container">
+            <img class="accordion__content__image" src="data:image/png;base64,{{ data6 }}" alt="placeholder alt text" />
+          </div>
+          
+        </div>
+        <input class="accordion__radio" type="radio" name="accordion-tabs4" id="tab-222" />
+        <label class="accordion__label" for="tab-222">Tab 2
+          <span class="accordion-tab--status"></span>
+        </label>
+        <div class="accordion__content">
+          <div class="accordion__content__image__container">
+            <img class="accordion__content__image" src="data:image/png;base64,{{ data7 }}" alt="placeholder alt text" />
+          </div>
+          
+        </div>
+        <input class="accordion__radio" type="radio" name="accordion-tabs4" id="tab-223" />
+        <label class="accordion__label" for="tab-223">Tab 3
+          <span class="accordion-tab--status"></span>
+        </label>
+        <div class="accordion__content">
+          <div class="accordion__content__image__container">
+            <img class="accordion__content__image" src="data:image/png;base64,{{ data8 }}" alt="placeholder alt text" />
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
     <div class="pcentre">
-      <button class="btn-lg btn-primary" type="button" id="cmd">Download Report</button>
+      <button class="btn-lg btn-primary" type="button" onclick="showresult()">Download Report</button>
     </div>
   </section>
 
@@ -107,29 +210,11 @@
   </footer>
   <!-- Scripts -->
   <script src="{%static 'assets/js/jquery.min.js' %}"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
-
-<!--the script-->
-<script>
-var doc = new jsPDF();
-var specialElementHandlers = {
-    '#editor': function (element, renderer) {
-        return true;
-    }
-};
-
-$('#cmd').click(function () {
-    doc.fromHTML($('#content').html(), 15, 15, {
-        'width': 170,
-            'elementHandlers': specialElementHandlers
-    });
-    doc.save('sample-file.pdf');
-});
-</script>
   <script src="{%static 'assets/js/jquery.scrollex.min.js' %}"></script>
   <script src="{%static 'assets/js/skel.min.js' %}"></script>
   <script src="{%static 'assets/js/util.js' %}"></script>
   <script src="{%static 'assets/js/main.js' %}"></script>
+
 </body>
 
 </html>
