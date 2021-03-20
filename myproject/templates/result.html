@@ -48,177 +48,122 @@
   </section>
 
   <section id="outerbox" class="wrapper">
-    <h2 class="pcentre">Important steps of the process </h2>
-
-    <div class="grid-style">
+    <h2 class="pcentre">Important graphs for Dataset #1</h2>
       <div class="accordion">
         
         <input class="accordion__radio" type="radio" name="original1" id="tab-111" checked/>
-        <label class="accordion__label" for="tab-111">Line Graph
+        <label class="accordion__label" for="tab-111">Initial Line Graph
           <span class="accordion-tab--status"></span>
         </label>
         <div class="accordion__content">
           <div class="accordion__content__image__container">
             <img class="accordion__content__image" src="data:image/png;base64,{{ data1_line }}" alt="placeholder alt text" />
-          </div>
-          
+          </div>         
         </div>
+
         <input class="accordion__radio" type="radio" name="original1" id="tab-112" />
-        <label class="accordion__label" for="tab-112">Bar Graph
+        <label class="accordion__label" for="tab-112">Resampled Line Graph
           <span class="accordion-tab--status"></span>
         </label>
         <div class="accordion__content">
           <div class="accordion__content__image__container">
             <img class="accordion__content__image" src="data:image/png;base64,{{ data1resample_line }}" alt="placeholder alt text" />
-          </div>
-          
+          </div>  
+        </div>
+
+        <input class="accordion__radio" type="radio" name="original1" id="tab-113" />
+        <label class="accordion__label" for="tab-113">Resampled Bar Graph
+          <span class="accordion-tab--status"></span>
+        </label>
+        <div class="accordion__content">
+          <div class="accordion__content__image__container">
+            <img class="accordion__content__image" src="data:image/png;base64,{{ data1resample_bar }}" alt="placeholder alt text" />
+          </div>  
+        </div>
+
+        <input class="accordion__radio" type="radio" name="original1" id="tab-114" />
+        <label class="accordion__label" for="tab-114">Resampled Correlation Graph
+          <span class="accordion-tab--status"></span>
+        </label>
+        <div class="accordion__content">
+          <div class="accordion__content__image__container">
+            <img class="accordion__content__image" src="data:image/png;base64,{{ data1resample_corr }}" alt="placeholder alt text" />
+          </div>  
+        </div>
+
+        <input class="accordion__radio" type="radio" name="original1" id="tab-115" />
+        <label class="accordion__label" for="tab-115">Combined Line Graph
+          <span class="accordion-tab--status"></span>
+        </label>
+        <div class="accordion__content">
+          <div class="accordion__content__image__container">
+            <img class="accordion__content__image" src="data:image/png;base64,{{ data1combined_line }}" alt="placeholder alt text" />
+          </div>  
         </div>
         
       </div>
+  </section>
 
+
+  <section id="outerbox" class="wrapper">
+    <h2 class="pcentre">Important graphs for Dataset #2</h2>
       <div class="accordion">
-        <input class="accordion__radio" type="radio" name="original2" id="tab-121" checked/>
-        <label class="accordion__label" for="tab-121">Line Graph
+        <input class="accordion__radio" type="radio" name="original2" id="tab-211" checked/>
+        <label class="accordion__label" for="tab-211">Initial Line Graph
           <span class="accordion-tab--status"></span>
         </label>
         <div class="accordion__content">
           <div class="accordion__content__image__container">
             <img class="accordion__content__image" src="data:image/png;base64,{{ data2_line }}" alt="placeholder alt text" />
           </div>
-          
         </div>
-        <input class="accordion__radio" type="radio" name="original2" id="tab-122" />
-        <label class="accordion__label" for="tab-122">Bar Graph
+
+        <input class="accordion__radio" type="radio" name="original2" id="tab-212" />
+        <label class="accordion__label" for="tab-212">Resampled Line Graph
           <span class="accordion-tab--status"></span>
         </label>
         <div class="accordion__content">
           <div class="accordion__content__image__container">
             <img class="accordion__content__image" src="data:image/png;base64,{{ data2resample_line }}" alt="placeholder alt text" />
           </div>
-          
         </div>
-      </div>
 
-    </div>
-
-    <div class="grid-style">
-      <div class="accordion">
-        
-        <input class="accordion__radio" type="radio" name="resample1" id="tab-211" checked/>
-        <label class="accordion__label" for="tab-211">Line
-          <span class="accordion-tab--status"></span>
-        </label>
-        <div class="accordion__content">
-          <div class="accordion__content__image__container">
-            <img class="accordion__content__image" src="data:image/png;base64,{{ data1resample_bar }}" alt="placeholder alt text" />
-          </div>
-          
-        </div>
-        <input class="accordion__radio" type="radio" name="resample1" id="tab-212" />
-        <label class="accordion__label" for="tab-212">Bar
-          <span class="accordion-tab--status"></span>
-        </label>
-        <div class="accordion__content">
-          <div class="accordion__content__image__container">
-            <img class="accordion__content__image" src="data:image/png;base64,{{ data1resample_corr }}" alt="placeholder alt text" />
-          </div>
-          
-        </div>
-        <!-- <input class="accordion__radio" type="radio" name="resample1" id="tab-213" />
-        <label class="accordion__label" for="tab-213">Tab 3
-          <span class="accordion-tab--status"></span>
-        </label>
-        <div class="accordion__content">
-          <div class="accordion__content__image__container">
-            <img class="accordion__content__image" src="data:image/png;base64,{{data1resample_corr }}" alt="placeholder alt text" />
-          </div>
-          
-        </div> -->
-      </div>
-
-      <div class="accordion">
-        <input class="accordion__radio" type="radio" name="resample2" id="tab-221" checked/>
-        <label class="accordion__label" for="tab-221">Line
+        <input class="accordion__radio" type="radio" name="original2" id="tab-213" />
+        <label class="accordion__label" for="tab-213">Resampled Bar Graph
           <span class="accordion-tab--status"></span>
         </label>
         <div class="accordion__content">
           <div class="accordion__content__image__container">
             <img class="accordion__content__image" src="data:image/png;base64,{{ data2resample_bar }}" alt="placeholder alt text" />
           </div>
-          
         </div>
-        <input class="accordion__radio" type="radio" name="resample2" id="tab-222" />
-        <label class="accordion__label" for="tab-222">Bar
+
+        <input class="accordion__radio" type="radio" name="original2" id="tab-214" />
+        <label class="accordion__label" for="tab-214">Resampled Correlation Graph
           <span class="accordion-tab--status"></span>
         </label>
         <div class="accordion__content">
           <div class="accordion__content__image__container">
             <img class="accordion__content__image" src="data:image/png;base64,{{ data2resample_corr }}" alt="placeholder alt text" />
           </div>
-          
         </div>
-        <!-- <input class="accordion__radio" type="radio" name="resample2" id="tab-223" />
-        <label class="accordion__label" for="tab-223">Tab 3
-          <span class="accordion-tab--status"></span>
-        </label>
-        <div class="accordion__content">
-          <div class="accordion__content__image__container">
-            <img class="accordion__content__image" src="data:image/png;base64,{{data2resample_corr }}" alt="placeholder alt text" />
-          </div>
-          
-        </div> -->
-      </div>
-    </div>
 
-    <div class="grid-style">
-      <div class="accordion">
-        
-        <input class="accordion__radio" type="radio" name="combined1" id="tab-311" checked/>
-        <label class="accordion__label" for="tab-311">Line
-          <span class="accordion-tab--status"></span>
-        </label>
-        <div class="accordion__content">
-          <div class="accordion__content__image__container">
-            <img class="accordion__content__image" src="data:image/png;base64,{{ data1combined_line }}" alt="placeholder alt text" />
-          </div>
-          
-        </div>
-       <!-- <input class="accordion__radio" type="radio" name="combined1" id="tab-312" />
-        <label class="accordion__label" for="tab-312">Bar
-          <span class="accordion-tab--status"></span>
-        </label>
-        <div class="accordion__content">
-          <div class="accordion__content__image__container">
-            <img class="accordion__content__image" src="data:image/png;base64,{{ data1combined_bar }}" alt="placeholder alt text" />
-          </div>
-          
-        </div> -->
-      </div>
-
-      <div class="accordion">
-        <input class="accordion__radio" type="radio" name="combined2" id="tab-321" checked/>
-        <label class="accordion__label" for="tab-321">Line
+        <input class="accordion__radio" type="radio" name="original2" id="tab-215" />
+        <label class="accordion__label" for="tab-215">Combined Line Graph
           <span class="accordion-tab--status"></span>
         </label>
         <div class="accordion__content">
           <div class="accordion__content__image__container">
             <img class="accordion__content__image" src="data:image/png;base64,{{ data2combined_line }}" alt="placeholder alt text" />
           </div>
-          
         </div>
-        <!-- <input class="accordion__radio" type="radio" name="combined2" id="tab-322" />
-        <label class="accordion__label" for="tab-322">Bar
-          <span class="accordion-tab--status"></span>
-        </label>
-        <div class="accordion__content">
-          <div class="accordion__content__image__container">
-            <img class="accordion__content__image" src="data:image/png;base64,{{ data2combined_bar }}" alt="placeholder alt text" />
-          </div>
-          
-        </div>
-      </div> -->
-    </div>
 
+      </div>
+  </section>
+
+    <!-- </div> -->
+    <section id="outerbox" class="wrapper">
+      <h2 class="pcentre">Important steps of the process </h2>
     <div class="pcentre">
       <!-- {{ cos }}<br>
           {{ euc }}<br>
