@@ -11,6 +11,7 @@ class blog(models.Model):
 	applications = models.TextField(max_length=200000)
 	written_by = models.CharField(max_length=30)
 	created_at = models.DateTimeField(auto_now_add=True)
+	formula_pic = models.CharField(max_length=50)
 
 	def __str__(self):
 		return self.name

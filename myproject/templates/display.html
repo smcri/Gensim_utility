@@ -47,6 +47,9 @@
             <div id="head">
               <h2>{{ req_blog.name }}</h2>
             </div>
+           <div class="img-wrap">
+            <img src="{%static 'images/formula_pics/'|add:req_blog.formula_pic%}" />
+            </div> 
             <h3>Description</h3>
             <p>{{req_blog.description}}</p>
             <h3>Advantages</h3>

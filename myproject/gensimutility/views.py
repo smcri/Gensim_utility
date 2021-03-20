@@ -177,10 +177,10 @@ def sim_graph(request):
 
 	plt.clf()
 
-	df1.plot(kind='bar')
-	fig = plt.gcf()
-	uri110 = urllib.parse.quote(graphrender(io.BytesIO()))
-	plt.clf()
+#	df1.plot(kind='bar')
+#	fig = plt.gcf()
+#	uri110 = urllib.parse.quote(graphrender(io.BytesIO()))
+#	plt.clf()
 
 	
 	l = 1
@@ -245,19 +245,19 @@ def sim_graph(request):
 
 	plt.clf()
 
-	df1_resample_combine.plot(kind='bar',figsize=(20,10))
-	fig = plt.gcf()
+#	df1_resample_combine.plot(kind='bar',figsize=(20,10))
+#	fig = plt.gcf()
 
-	uri112 = urllib.parse.quote(graphrender(io.BytesIO()))
+#	uri112 = urllib.parse.quote(graphrender(io.BytesIO()))
 
-	plt.clf()
+#	plt.clf()
 
-	desc = df1_resample.describe()
-	fig2,ax = plt.subplots()
-	ax.table(cellText=desc.values, colLabels=desc.keys(), loc='center')
-	fig = plt.gcf()
-	uri113 = urllib.parse.quote(graphrender(io.BytesIO()))
-	plt.clf()
+#	desc = df1_resample.describe()
+#	fig2,ax = plt.subplots()
+#	ax.table(cellText=desc.values, colLabels=desc.keys(), loc='center')
+#	fig = plt.gcf()
+#	uri113 = urllib.parse.quote(graphrender(io.BytesIO()))
+#	plt.clf()
 
 	dataset = datasets.objects.get(id=2)
 	path1 = getattr(dataset,'path')
@@ -270,10 +270,10 @@ def sim_graph(request):
 
 	plt.clf()
 
-	df2.plot(kind='bar')
-	fig = plt.gcf()
-	uri220 = urllib.parse.quote(graphrender(io.BytesIO()))
-	plt.clf()
+#	df2.plot(kind='bar')
+#	fig = plt.gcf()
+#	uri220 = urllib.parse.quote(graphrender(io.BytesIO()))
+#	plt.clf()
 
 #	matrix_corr = df2.corr()
 #	ax = sns.heatmap(matrix_corr, vmin=-1, vmax=1, center=0,cmap=sns.diverging_palette(20, 220, n=200),square=True)
@@ -344,17 +344,17 @@ def sim_graph(request):
 
 	plt.clf()
 
-	df2_resample_combine.plot(kind='bar',figsize=(20,10))
-	fig = plt.gcf()
-	uri222 = urllib.parse.quote(graphrender(io.BytesIO()))
-	plt.clf()
+#	df2_resample_combine.plot(kind='bar',figsize=(20,10))
+#	fig = plt.gcf()
+#	uri222 = urllib.parse.quote(graphrender(io.BytesIO()))
+#	plt.clf()
 
-	desc2 = df2_resample.describe()
-	fig2,ax = plt.subplots()
-	ax.table(cellText=desc2.values, colLabels=desc2.keys(), loc='center')
-	fig = plt.gcf()
-	uri223 = urllib.parse.quote(graphrender(io.BytesIO()))
-	plt.clf()
+#	desc2 = df2_resample.describe()
+#	fig2,ax = plt.subplots()
+#	ax.table(cellText=desc2.values, colLabels=desc2.keys(), loc='center')
+#	fig = plt.gcf()
+#	uri223 = urllib.parse.quote(graphrender(io.BytesIO()))
+#	plt.clf()
 
 	
 	rowmean2 = np.array(df1_resample_combine)
@@ -375,7 +375,7 @@ def sim_graph(request):
 	matu = matusita(dataset2,dataset3,path)
 	dive = divergence(dataset2,dataset3,path)
 
-	return render(request,'result.html',{'data1_line':uri, 'data1_bar':uri110, 'data1resample_line':uri2, 'data1resample_bar':uri3, 'data1resample_corr':uri4, 'data1combined_line':uri5, 'data1combined_bar':uri112, 'data1_table':uri113, 'data2_line':uri6, 'data2_bar':uri220, 'data2resample_line':uri7, 'data2resample_bar':uri8, 'data2resample_corr':uri9, 'data2combined_line':uri10, 'data2combined_bar':uri222, 'data2_table':uri223, 'cos':cos, 'euc':euc, 'pea':pea, 'cheby':cheby, 'soer':soer, 'matu':matu, 'dive':dive})
+	return render(request,'result.html',{'data1_line':uri, 'data1resample_line':uri2, 'data1resample_bar':uri3, 'data1resample_corr':uri4, 'data1combined_line':uri5, 'data2_line':uri6, 'data2resample_line':uri7, 'data2resample_bar':uri8, 'data2resample_corr':uri9, 'data2combined_line':uri10, 'cos':cos, 'euc':euc, 'pea':pea, 'cheby':cheby, 'soer':soer, 'matu':matu, 'dive':dive})
 
 #def login(request):
 #    my_login = {'login_tag':'\0'}
