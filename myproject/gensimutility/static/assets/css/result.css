@@ -4618,15 +4618,15 @@ body.is-mobile .banner > article {
   font-size: 4.5rem;
 }
 
-#outerbox {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-right: 5rem;
-  padding-left: 5rem;
+#outerbox1,#outerbox2,#outerbox3  {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  padding-right: 8rem;
+  padding-left: 8rem;
   background-color: rgb(255, 255, 255);
-  border-style: groove;
-  border-width: 1rem;
-  margin: 1rem;
+  border-style: solid;
+  border-width: 2px;
+  margin: 2rem;
 }
 
 img {
@@ -4682,7 +4682,7 @@ html {
 .accordion input[type="radio"]:checked + label {
   background-color: rgb(129, 185, 185);
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   border-top: 1px solid black;
   border-left: 1px solid black;
   border-right: 1px solid black;

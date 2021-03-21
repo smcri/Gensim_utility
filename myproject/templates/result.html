@@ -172,7 +172,55 @@
           {{ soer }}<br>
           {{ matu }}<br>
           {{ dive }}<br> -->
-      <button class="btn-lg btn-primary" type="button" onclick="showresult()">Download Report</button>
+      <button class="btn-lg btn-primary" type="button" id="cmd">Download Report</button>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+
+<!--the script-->
+<script>
+var doc = new jsPDF();
+var imgdata1_line = 'data:image/png;base64,{{ data1_line }}'
+var imgdata1resample_line = 'data:image/png;base64,{{ data1resample_line }}'
+var imgdata1resample_bar = 'data:image/png;base64,{{ data1resample_bar }}'
+var imgdata1resample_corr = 'data:image/png;base64,{{ data1resample_corr }}'
+var imgdata1combined_line = 'data:image/png;base64,{{ data1combined_line }}'
+var imgdata2_line = 'data:image/png;base64,{{ data2_line }}'
+var imgdata2resample_line = 'data:image/png;base64,{{ data2resample_line }}'
+var imgdata2resample_bar = 'data:image/png;base64,{{ data2resample_bar }}'
+var imgdata2resample_corr = 'data:image/png;base64,{{ data2resample_corr }}'
+var imgdata2combined_line = 'data:image/png;base64,{{ data2combined_line }}'
+
+$('#cmd').click(function () {
+    doc.text("PDF report", 10, 10);
+    doc.addImage(imgdata1_line, 'PNG', 15, 40, 180, 160);
+    doc.addPage();
+    doc.addImage(imgdata1resample_line, 'PNG', 15, 40, 180, 160);
+    doc.addPage();
+    doc.addImage(imgdata1resample_bar, 'PNG', 15, 40, 180, 160);
+    doc.addPage();
+    doc.addImage(imgdata1resample_corr, 'PNG', 15, 40, 180, 160);
+    doc.addPage();
+    doc.addImage(imgdata1combined_line, 'PNG', 15, 40, 180, 160);
+    doc.addImage(imgdata2_line, 'PNG', 15, 40, 180, 160);
+    doc.addPage();
+    doc.addImage(imgdata2resample_line, 'PNG', 15, 40, 180, 160);
+    doc.addPage();
+    doc.addImage(imgdata2resample_bar, 'PNG', 15, 40, 180, 160);
+    doc.addPage();
+    doc.addImage(imgdata2resample_corr, 'PNG', 15, 40, 180, 160);
+    doc.addPage();
+    doc.addImage(imgdata2combined_line, 'PNG', 15, 40, 180, 160);
+    doc.addPage();
+    doc.text("cos:{{cos}}\n", 10, 10);
+    doc.text("euclidean:{{euc}}\n", 10, 20);
+    doc.text("pearson:{{pea}}\n", 10, 30);
+    doc.text("chebyshev:{{cheby}}\n", 10, 40);
+    doc.text("soergel:{{soer}}\n", 10, 50);
+    doc.text("matusita:{{matu}}\n", 10, 60);
+    doc.text("divergence:{{dive}}\n", 10, 70);
+    doc.text("kulcynski:{{kulc}}\n", 10, 80);
+    doc.save('generated-report.pdf');
+});
+</script>
     </div>
   </section>
 
