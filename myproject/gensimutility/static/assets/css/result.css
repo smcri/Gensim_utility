@@ -4816,4 +4816,6 @@ html {
   padding: 0.1rem;
   border: 1px solid teal;
   width: 20%;
+  align-self: center;
+  
 }
