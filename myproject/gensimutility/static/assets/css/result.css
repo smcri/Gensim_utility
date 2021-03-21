@@ -4810,3 +4810,10 @@ html {
     border: none;
   }
 }
+
+.ibox{
+  margin: 0.2rem;
+  padding: 0.1rem;
+  border: 1px solid teal;
+  width: 20%;
+}
