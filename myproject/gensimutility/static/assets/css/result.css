@@ -4619,10 +4619,14 @@ body.is-mobile .banner > article {
 }
 
 #outerbox {
-  padding: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-right: 5rem;
+  padding-left: 5rem;
   background-color: rgb(255, 255, 255);
   border-style: groove;
   border-width: 1rem;
+  margin: 1rem;
 }
 
 img {
@@ -4678,6 +4682,7 @@ html {
 .accordion input[type="radio"]:checked + label {
   background-color: rgb(129, 185, 185);
   font-weight: 600;
+  font-size: 1.5rem;
   border-top: 1px solid black;
   border-left: 1px solid black;
   border-right: 1px solid black;
