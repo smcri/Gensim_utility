@@ -73,5 +73,34 @@ class TestViews(TestCase):
 
         self.assertEquals(response.status_code,200)
         #self.assertEquals(self.Blog1.name,'Blog1')"""
+    
+    """def test_dataset_POST_create_Data(self):
+        #blog.objects.create()
+        
+        response = self.client.post(self.dataset_url, {
+            'name' : 'dataset1 for testing' ,
+            'path' : 'Gensim_utility\myproject\csv_files',
+            'description' : "It is a demo description about a dataset created for testing"
+        } )
+
+        self.assertEquals(response.status_code,200)
+        #self.assertEquals(self.Blog1.name,'Blog1')"""
+    
+    
+    # NOT SURE IF NEEDED
+    """def test_team_POST_create_Data(self):
+        #blog.objects.create()
+        
+        response = self.client.post(self.about_url, {
+            'name' : 'Admin11' ,
+            'description': "It is a demo description about an admin who contributed in creating the project",
+            'email_addr' : 'iit2019502@iiita.ac.in',
+            'profile_pic' : '\0'
+            
+        } )
+
+        self.assertEquals(response.status_code,200)
+        #self.assertEquals(self.Blog1.name,'Blog1')"""
+    
 
 
