@@ -70,6 +70,14 @@ def soergel(x,y,path):
 		sum2 = sum2 + max(x[i[0]],y[i[1]])
 	return sum1/sum2
 
+def kulcynski(x,y,path):
+	sum1 = 0
+	sum2 = 0
+	for i in path:
+		sum1 = sum1 + abs(x[i[0]] - y[i[1]])
+		sum2 = sum2 + min(x[i[0]],y[i[1]])
+	return sum1/sum2
+
 def matusita(x,y,path):
 	summ = 0
 	for i in path:
@@ -372,10 +380,11 @@ def sim_graph(request):
 	pea = pearson(dataset2,dataset3,path)
 	cheby = chebyshev(dataset2,dataset3,path)
 	soer = soergel(dataset2,dataset3,path)
+	kulc = kulcynski(dataset2,dataset3,path)
 	matu = matusita(dataset2,dataset3,path)
 	dive = divergence(dataset2,dataset3,path)
 
-	return render(request,'result.html',{'data1_line':uri, 'data1resample_line':uri2, 'data1resample_bar':uri3, 'data1resample_corr':uri4, 'data1combined_line':uri5, 'data2_line':uri6, 'data2resample_line':uri7, 'data2resample_bar':uri8, 'data2resample_corr':uri9, 'data2combined_line':uri10, 'cos':cos, 'euc':euc, 'pea':pea, 'cheby':cheby, 'soer':soer, 'matu':matu, 'dive':dive})
+	return render(request,'result.html',{'data1_line':uri, 'data1resample_line':uri2, 'data1resample_bar':uri3, 'data1resample_corr':uri4, 'data1combined_line':uri5, 'data2_line':uri6, 'data2resample_line':uri7, 'data2resample_bar':uri8, 'data2resample_corr':uri9, 'data2combined_line':uri10, 'cos':cos, 'euc':euc, 'pea':pea, 'cheby':cheby, 'soer':soer, 'kulc':kulc, 'matu':matu, 'dive':dive})
 
 #def login(request):
 #    my_login = {'login_tag':'\0'}
