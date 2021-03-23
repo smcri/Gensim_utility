@@ -48,7 +48,7 @@
   </section>
 
   <section id="outerbox1" class="wrapper">
-    <h2 class="pcentre">Important graphs for Dataset #1</h2>
+    <h2 class="pcentre">Important graphs for {{ d1name }} </h2>
       <div class="accordion">
         
         <input class="accordion__radio" type="radio" name="original1" id="tab-111" checked/>
@@ -106,7 +106,7 @@
 
 
   <section id="outerbox2" class="wrapper">
-    <h2 class="pcentre">Important graphs for Dataset #2</h2>
+    <h2 class="pcentre">Important graphs for {{ d2name }}</h2>
       <div class="accordion">
         <input class="accordion__radio" type="radio" name="original2" id="tab-211" checked/>
         <label class="accordion__label" for="tab-211">Initial Line Graph
@@ -165,7 +165,7 @@
     <section id="outerbox3" class="wrapper">
       <h2 class="pcentre">Different Similarity indices computed for the above pair of datasets. </h2>
       <div class="pcentre">
-      <div class="gridstyle">
+      <div class="gridstyle"  >
            
         <div class="ibox"> Cosine: {{ cos }}</div>
         <div  class="ibox"> Euclidean: {{ euc }}</div>

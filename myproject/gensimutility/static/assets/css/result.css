@@ -4811,11 +4811,14 @@ html {
   }
 }
 
+
 .ibox{
-  margin: 0.2rem;
+  font-size: 1.3rem;
+  margin:0 auto;
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
   padding: 0.1rem;
   border: 1px solid teal;
-  width: 20%;
-  align-self: center;
+  width: 30%;
   
 }
