@@ -1,6 +1,10 @@
 # This file may be used to create an environment using:
 # $ conda create --name <env> --file <this file>
 # platform: win-64
+Django==3.1.6
+django-widget-tweaks==1.4.8
+dj-database-url==0.5.0
+python-decouple==3.4
 asgiref=3.3.1=pyhd3eb1b0_0
 blas=1.0=mkl
 brotlipy=0.7.0=py38h2bbff1b_1003
