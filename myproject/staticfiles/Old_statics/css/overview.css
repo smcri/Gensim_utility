@@ -1,0 +1,21 @@
+.car_img{
+  padding-left: 15rem;
+  padding-right: 15rem;
+}
+
+body{
+  background-image: url('../res/ovbg.jpg');
+  background-size: cover;
+}
+
+h2{
+  color:white;
+}
+
+#jumbo{
+  background-color:rgba(54, 53, 65, 0.534);
+}
+
+.nav_button{
+  color:white;
+}
