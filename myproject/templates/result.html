@@ -47,8 +47,8 @@
     </article>
   </section>
 
-  <section id="outerbox" class="wrapper">
-    <h2 class="pcentre">Important graphs for Dataset #1</h2>
+  <section id="outerbox1" class="wrapper">
+    <h2 class="pcentre">Important graphs for {{ d1name }} </h2>
       <div class="accordion">
         
         <input class="accordion__radio" type="radio" name="original1" id="tab-111" checked/>
@@ -105,8 +105,8 @@
   </section>
 
 
-  <section id="outerbox" class="wrapper">
-    <h2 class="pcentre">Important graphs for Dataset #2</h2>
+  <section id="outerbox2" class="wrapper">
+    <h2 class="pcentre">Important graphs for {{ d2name }}</h2>
       <div class="accordion">
         <input class="accordion__radio" type="radio" name="original2" id="tab-211" checked/>
         <label class="accordion__label" for="tab-211">Initial Line Graph
@@ -162,9 +162,24 @@
   </section>
 
     <!-- </div> -->
-    <section id="outerbox" class="wrapper">
-      <h2 class="pcentre">Important steps of the process </h2>
-    <div class="pcentre">
+    <section id="outerbox3" class="wrapper">
+      <h2 class="pcentre">Different Similarity indices computed for the above pair of datasets. </h2>
+      <div class="pcentre">
+      <div class="gridstyle"  >
+           
+        <div class="ibox"> Cosine: {{ cos }}</div>
+        <div  class="ibox"> Euclidean: {{ euc }}</div>
+        <div  class="ibox"> Pearson: {{ pea }}</div>
+        <div  class="ibox"> Chebyshev: {{ cheby }}</div>
+        <div  class="ibox"> Soergel: {{ soer }}</div>
+        <div  class="ibox"> Matusita: {{ matu }}</div>
+        <div  class="ibox"> Divergence: {{ dive }}</div>
+        <div  class="ibox"> Kulcynski: {{ kulc }}</div>
+      </div>
+        <br>
+        <button class="btn-lg btn-primary" type="button" id="cmd">Download Report</button>
+      
+     </div>
       <!-- {{ cos }}<br>
           {{ euc }}<br>
           {{ pea }}<br>
@@ -172,7 +187,7 @@
           {{ soer }}<br>
           {{ matu }}<br>
           {{ dive }}<br> -->
-      <button class="btn-lg btn-primary" type="button" id="cmd">Download Report</button>
+      
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
 
 <!--the script-->
@@ -221,7 +236,6 @@ $('#cmd').click(function () {
     doc.save('generated-report.pdf');
 });
 </script>
-    </div>
   </section>
 
 

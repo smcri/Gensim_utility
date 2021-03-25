@@ -384,7 +384,8 @@ def sim_graph(request):
 	matu = matusita(dataset2,dataset3,path)
 	dive = divergence(dataset2,dataset3,path)
 
-	return render(request,'result.html',{'data1_line':uri, 'data1resample_line':uri2, 'data1resample_bar':uri3, 'data1resample_corr':uri4, 'data1combined_line':uri5, 'data2_line':uri6, 'data2resample_line':uri7, 'data2resample_bar':uri8, 'data2resample_corr':uri9, 'data2combined_line':uri10, 'cos':cos, 'euc':euc, 'pea':pea, 'cheby':cheby, 'soer':soer, 'kulc':kulc, 'matu':matu, 'dive':dive})
+	return render(request,'result.html',{'data1_line':uri, 'data1resample_line':uri2, 'data1resample_bar':uri3, 'data1resample_corr':uri4, 'data1combined_line':uri5, 'data2_line':uri6, 'data2resample_line':uri7, 'data2resample_bar':uri8, 'data2resample_corr':uri9, 'data2combined_line':uri10, 'cos':cos, 'euc':euc, 'pea':pea, 'cheby':cheby, 'soer':soer, 'kulc':kulc, 'matu':matu, 'dive':dive,
+	'd1name':url1,'d2name':url2})
 
 #def login(request):
 #    my_login = {'login_tag':'\0'}
