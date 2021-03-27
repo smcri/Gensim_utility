@@ -4618,11 +4618,11 @@ body.is-mobile .banner > article {
   font-size: 4.5rem;
 }
 
-#outerbox1,#outerbox2,#outerbox3  {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-  padding-right: 8rem;
-  padding-left: 8rem;
+#outerbox1,#outerbox2,#outerbox3,#outerbox4,#outerbox5,#outerbox6  {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
   background-color: rgb(255, 255, 255);
   border-style: solid;
   border-width: 2px;
@@ -4812,6 +4812,7 @@ html {
 }
 
 
+
 .ibox{
   font-size: 1.3rem;
   margin:0 auto;
@@ -4819,6 +4820,6 @@ html {
   margin-bottom: 0.2rem;
   padding: 0.1rem;
   border: 1px solid teal;
-  width: 30%;
+
   
 }
