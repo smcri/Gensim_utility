@@ -4623,67 +4623,91 @@ body.is-mobile .banner > article {
   }
 }
 
-#hheader {
+/* #hheader {
   font-size: 3rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
+} */
 
 
 @media screen and (max-width: 1680px) {
   #hheader {
-    font-size: 3rem;
-  }
-  .ovheader {
-    font-size: 3rem;
-  }
-  .oheader {
     font-size: 4rem;
+  }
+  #hintro {
+    font-size: 1.5rem;
+  }
+  #fmenu {
+    font-size: 1.5rem;
+  }
+  #wheader {
+    font-size: 2.5rem;
   }
 }
 @media screen and (max-width: 1280px) {
   #hheader {
-    font-size: 3rem;
-  }
-  .ovheader {
-    font-size: 2rem;
-  }
-  .oheader {
     font-size: 3.5rem;
+  }
+  #hintro {
+    font-size: 1.5rem;
+  }
+  #fmenu {
+    font-size: 1.5rem;
+  }
+  #wheader {
+    font-size: 2.5rem;
   }
 }
 @media screen and (max-width: 980px) {
   #hheader {
     font-size: 3rem;
   }
-  .ovheader {
-    font-size: 2rem;
+  #hintro {
+    font-size: 1.5rem;
   }
-  .oheader {
-    font-size: 3rem;
+  #fmenu {
+    font-size: 1.5rem;
+  }
+  #wheader {
+    font-size: 2.5rem;
   }
 }
 @media screen and (max-width: 736px) {
   #hheader {
     font-size: 3rem;
   }
-  .ovheader {
+  #hintro {
+    font-size: 1.5rem;
+  }
+  #fmenu {
     font-size: 2rem;
   }
-  .oheader {
+  #wheader {
     font-size: 3rem;
   }
+  /* #menu > ul.links > li {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 3rem;
+  } */
 }
 @media screen and (max-width: 480px) {
   #hheader {
     font-size: 3rem;
   }
-  .ovheader {
+  #hintro {
     font-size: 1.5rem;
   }
-  .oheader {
-    font-size: 3rem;
+  #fmenu {
+    font-size: 2rem;
   }
+  #wheader {
+    font-size: 2.5rem;
+  }
+  /* #menu > ul.links > li {
+    padding: auto;
+    font-size: 3rem;
+  } */
 }
 #intr {
   padding-top: 2rem;

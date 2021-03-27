@@ -4612,9 +4612,9 @@ body.is-mobile .banner > article {
 }
 
 #outerbox {
-  margin: 2rem;
+  margin: 0.5rem;
   background-color: rgb(232, 222, 236);
-  padding: 1rem;
+  padding: 0.5rem;
 }
 .pcentre {
   text-align: center;
@@ -4662,6 +4662,7 @@ label {
 }
 #urlbox1, #urlbox2 {
   display: none;
+  max-width: 50%;
 }
 
 .panel {
@@ -4698,31 +4699,61 @@ label {
   #ovheader {
     font-size: 4rem;
   }
+  #fmenu {
+    font-size: 1.5rem;
+  }
+  #sheader {
+    font-size: 2rem;
+  }
 }
 @media screen and (max-width: 1280px) {
   #ovheader {
     font-size: 3rem;
+  }
+  #fmenu {
+    font-size: 1.5rem;
+  }
+  #sheader {
+    font-size: 2rem;
   }
 }
 @media screen and (max-width: 980px) {
   #ovheader {
     font-size: 3rem;
   }
+  #fmenu {
+    font-size: 1.5rem;
+  }
+  #sheader {
+    font-size: 2rem;
+  }
 }
 @media screen and (max-width: 736px) {
   #ovheader {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
   .urlfield {
     max-width: 300px;
+  }
+  #fmenu {
+    font-size: 1.5rem;
+  }
+  #sheader {
+    font-size: 1.5rem;
   }
 }
 @media screen and (max-width: 480px) {
   #ovheader {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
   .urlfield {
-    max-width: 300px;
+    max-width: 200px;
+  }
+  #fmenu {
+    font-size: 1rem;
+  }
+  #sheader {
+    font-size: 1.5rem;
   }
 }
 .accordion {

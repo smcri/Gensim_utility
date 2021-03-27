@@ -31,7 +31,7 @@
     <!-- Header -->
     <header id="header" class="alt">
       <div class="logo"><a href="{%url 'home' %}">GenSim Utility</a></div>
-      <a href="#menu">Menu</a>
+      <a href="#menu" id="fmenu">Menu</a>
     </header>
 
     <!-- Nav -->
@@ -52,8 +52,8 @@
         <img src="{%static 'images/dtbg.jpg'%}" alt="" />
         <div class="inner">
           <header>
-            <h3><b>Similarity: An Overview</b></h3>
-            <h2 class="oheader">{{ blog.name }}</h2>
+            <h3 id="hheader"><b>Similarity: An Overview</b></h3>
+            <h2 id="oheader">{{ blog.name }}</h2>
           </header>
         </div>
       </article>

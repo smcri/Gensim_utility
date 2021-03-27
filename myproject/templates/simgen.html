@@ -22,7 +22,7 @@
   <!-- Header -->
   <header id="header" class="alt">
     <div class="logo"><a href="{% url 'home' %}">GenSim Utility</a></div>
-    <a href="#menu">Menu</a>
+    <a href="#menu" id="fmenu">Menu</a>
   </header>
 
   <!-- Nav -->
@@ -42,7 +42,7 @@
       <img src="{%static 'images/dtbg.jpg' %}" alt="" />
       <div class="inner">
         <header>
-          <h3><b>Similarity Generation</b></h3>
+          <h3 id="sheader"><b>Similarity Generation</b></h3>
           <h2 id="ovheader">Choose Datasets</h2>
         </header>
       </div>
@@ -68,7 +68,7 @@
         <div id="ddone" class="boxes">
           <!-- <form method="POST"> -->
           <div>
-            <select id="pd1" name="pd1" onchange="toggle1()">
+            <select id="pd1" name="pd1">
             {% for dataset in dataset_set %}
               <option value = {{dataset.id}}>{{dataset.name}}</option>
             {% endfor %}
@@ -82,18 +82,7 @@
           	{% for dataset in dataset_set %}
           	<div class="d1" id={{dataset.id}}><p>{{dataset.description}}</p></div>
             {% endfor %}
-            <!-- <div class="d1" id="ds1">
-              <p>One  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, voluptatem porro eius veritatis minus
-              </p>
-            </div>
-            <div class="d1" id="ds2">
-              <p>Two  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, voluptatem porro eius veritatis minus
-              </p>
-            </div>
-            <div class="d1" id="ds3">
-              <p>Three   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, voluptatem porro eius veritatis minus
-              </p>
-            </div> -->
+           
           <br>
             <button class="btn btn-primary" type="button" onclick="confirm1()">
               Submit
@@ -135,7 +124,7 @@
         <div id="ddtwo" class="boxes">
           <!-- <form method="POST"> -->
           <div>
-            <select id="pd2" name="pd2" onchange="toggle2()" >
+            <select id="pd2" name="pd2" >
                {% for dataset in dataset_set %}
                 <option value = {{dataset.id}}>{{dataset.name}}</option>
               {% endfor %} 
@@ -149,19 +138,7 @@
           	{% for dataset in dataset_set %}
           	<div class="d2" id={{dataset.id|add:"100"}}><p>{{dataset.description}}</p></div>
             {% endfor %} 
-           <!-- <div class="d2" id="ds4">
-              <p>Four   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, voluptatem porro eius veritatis minus
-              </p>
-            </div>
-            
-            <div class="d2" id="ds5">
-              <p>Five   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, voluptatem porro eius veritatis minus
-              </p>
-            </div>
-            <div class="d2" id="ds6">
-              <p>Six   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, voluptatem porro eius veritatis minus
-              </p>
-            </div> -->
+ 
           <br>
             <button class="btn btn-primary" type="button" onclick="confirm2()">
               Submit
