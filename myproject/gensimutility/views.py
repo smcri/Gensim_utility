@@ -171,7 +171,7 @@ def sim_graph(request):
 
 	dataset = datasets.objects.get(id=1)
 	path1 = getattr(dataset,'path')
-	df1 = pd.read_csv(url1,parse_dates=True, index_col=0)
+	df1 = pd.read_csv(url1,parse_dates=True, index_col=0,error_bad_lines=False)
 
 	print(df1)
 	df1[df1.columns].plot(kind='line')
