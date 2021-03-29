@@ -72,7 +72,7 @@ function confirm1(){
   var ele2=document.getElementById('url1');
   var div1=document.getElementById('ddone');
     
-    if(ele1.value !==""){
+    if(ele2.value ==""){
       document.getElementById('dset1').value = getSelectedOption(ele1).innerText;
     }
     else{
@@ -86,7 +86,7 @@ function confirm2(){
   var ele2=document.getElementById('url2');
   var div1=document.getElementById('ddtwo');
     
-  if(ele1.value !==""){
+  if(ele2.value ==""){
     document.getElementById('dset2').value = getSelectedOption(ele1).innerText;
   }
   else{
