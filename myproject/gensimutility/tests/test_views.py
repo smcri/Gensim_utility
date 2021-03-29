@@ -56,10 +56,16 @@ class TestViews(TestCase):
         self.assertEquals(response.status_code , 200)
         self.assertTemplateUsed(response , 'aboutus.html')
 
+    #NOT NEEDED
     """def test_overview_POST_create_Data(self):
         #blog.objects.create()
+        client = Client() 
+        
+        
+        
         
         response = self.client.post(self.overview_url, {
+            'id' : '123',
             'name' : 'Blog1 for testing' ,
             'content' : " It is a demo blog content to check for testing",
             'description' : 'It is a demo description',
@@ -71,10 +77,12 @@ class TestViews(TestCase):
             'formula_pic' : 'images/dtbg.jpg' 
         } )
 
-        self.assertEquals(response.status_code,200)
+        self.assertEquals(response.status_code,302)
         #self.assertEquals(self.Blog1.name,'Blog1')"""
+
+
     
-    """def test_dataset_POST_create_Data(self):
+    def test_dataset_POST_create_Data(self):
         #blog.objects.create()
         
         response = self.client.post(self.dataset_url, {
@@ -84,7 +92,7 @@ class TestViews(TestCase):
         } )
 
         self.assertEquals(response.status_code,200)
-        #self.assertEquals(self.Blog1.name,'Blog1')"""
+        #self.assertEquals(self.Blog1.name,'Blog1')
     
     
     # NOT SURE IF NEEDED

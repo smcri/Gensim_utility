@@ -1,0 +1,27 @@
+h1 {
+  font-family: helvetica;
+  font-size: 3vw;
+  letter-spacing: 5px;
+  text-align: center;
+  text-transform: uppercase;
+  color:rgb(31, 33, 34);
+}
+
+p {
+  font-family: calibri;
+  font-size: 2vw;
+  line-height: 3vw;
+  text-align: justify;
+  color:rgb(31, 33, 34);
+}
+
+#intro{
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
+
+.home_body{
+  background-image: url("../res/bg3.d59cf995457f.jpeg");
+  background-size: cover;
+  
+}
