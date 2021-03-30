@@ -13,7 +13,7 @@ img {
 
 .flex-container {
   display: flex;
-  background-color: wheat;
+  background-color: rgb(213, 252, 252);
   margin: 1rem;
 }
 
@@ -29,6 +29,9 @@ img {
     width: 2500px;
     font-size: 1rem;
   }
+  #fmenu {
+    font-size: 1.5rem;
+  }
 #ovheader {
   font-size: 4.5rem;
 }
@@ -37,6 +40,9 @@ img {
   .flex-container .content {
     width: 2000px;
     font-size: 1.2rem;
+  }
+  #fmenu {
+    font-size: 1.5rem;
   }
   #ovheader {
     font-size: 3.5rem;
@@ -47,6 +53,9 @@ img {
     width: 1200px;
     font-size: 0.8rem;
   }
+  #fmenu {
+    font-size: 1.5rem;
+  }
   #ovheader {
     font-size: 2.5rem;
   }
@@ -56,6 +65,9 @@ img {
     width: 900px;
     font-size: 0.8rem;
   }
+  #fmenu {
+    font-size: 1rem;
+  }
   #ovheader {
     font-size: 2.5rem;
   }
@@ -64,6 +76,9 @@ img {
   .flex-container .content {
     width: 600px;
     font-size: 0.8rem;
+  }
+  #fmenu {
+    font-size: 1rem;
   }
   #ovheader {
     font-size: 2rem;

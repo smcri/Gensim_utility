@@ -4634,56 +4634,71 @@ body.is-mobile .banner > article {
 }
 @media screen and (max-width: 1680px) {
   #hheader {
-    font-size: 3rem;
+    font-size: 2rem;
   }
   .ovheader {
     font-size: 3rem;
   }
-  .oheader {
-    font-size: 3.5rem;
+  #oheader {
+    font-size: 4rem;
+  }
+  #fmenu {
+    font-size: 1.5rem;
   }
 }
 @media screen and (max-width: 1280px) {
   #hheader {
-    font-size: 3rem;
+    font-size: 2rem;
   }
   .ovheader {
     font-size: 2rem;
   }
-  .oheader {
+  #oheader {
     font-size: 3.5rem;
+  }
+  #fmenu {
+    font-size: 1.5rem;
   }
 }
 @media screen and (max-width: 980px) {
   #hheader {
-    font-size: 3rem;
+    font-size: 2rem;
   }
   .ovheader {
     font-size: 2rem;
   }
-  .oheader {
-    font-size: 3rem;
+  #oheader {
+    font-size: 4rem;
+  }
+  #fmenu {
+    font-size: 1.5rem;
   }
 }
 @media screen and (max-width: 736px) {
   #hheader {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
   .ovheader {
     font-size: 2rem;
   }
-  .oheader {
-    font-size: 3rem;
+  #oheader {
+    font-size: 5rem;
+  }
+  #fmenu {
+    font-size: 2rem;
   }
 }
 @media screen and (max-width: 480px) {
   #hheader {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
   .ovheader {
     font-size: 1.5rem;
   }
-  .oheader {
-    font-size: 3rem;
+  #oheader {
+    font-size: 5rem;
+  }
+  #fmenu {
+    font-size: 2rem;
   }
 }
