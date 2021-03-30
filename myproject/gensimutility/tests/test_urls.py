@@ -1,6 +1,6 @@
 from django.test import TestCase
 from django.urls import reverse,resolve
-from gensimutility.views import Overview , dataset , home , about 
+from gensimutility.views import Overview , dataset , home , about , learnmore  
 
 
 
@@ -32,13 +32,13 @@ class TestURL(TestCase):
             self.assertEquals(resolve(url).func ,about )
     
     def test_learnmore_url_loads_properly(self):
-            url = resolve('learnmore/')
+            url = reverse('learnmore')
             #print(resolve(url))
             #response = self.client.get(url)
             self.assertEquals(resolve(url).func ,learnmore )
     
     def test_result_url_loads_properly(self):
-            url = resolve('simi/')
+            url = reverse('sim')
             #print(resolve(url))
             #response = self.client.get(url)
             self.assertEquals(resolve(url).func ,sim ) 
