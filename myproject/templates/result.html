@@ -1,362 +1,410 @@
 {%load static %}<!DOCTYPE html>
 <html>
+  <head>
+    <title>GenSim: Visualisation</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="{%static 'assets/css/result.css'%}" />
+    <script src="{%static 'assets/js/simgen.js'%}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{%static 'icons/apple-touch-icon.png'%}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{%static 'icons/favicon-32x32.png'%}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{%static 'icons/favicon-16x16.png'%}"
+    />
+    <link rel="manifest" href="{%static 'icons/site.webmanifest'%}" />
+  </head>
 
-<head>
-  <title>GenSim: Visualisation</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="{%static 'assets/css/result.css'%}" />
-  <script src="{%static 'assets/js/simgen.js'%}"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <link rel="apple-touch-icon" sizes="180x180" href="{%static 'icons/apple-touch-icon.png'%}">
-  <link rel="icon" type="image/png" sizes="32x32" href="{%static 'icons/favicon-32x32.png'%}">
-  <link rel="icon" type="image/png" sizes="16x16" href="{%static 'icons/favicon-16x16.png'%}">
-  <link rel="manifest" href="{%static 'icons/site.webmanifest'%}">
-</head>
+  <body>
+    <!-- Header -->
+    <header id="header" class="alt">
+      <div class="logo"><a href="{% url 'home' %}">GenSim Utility</a></div>
+      <a href="#menu">Menu</a>
+    </header>
 
-<body>
+    <!-- Nav -->
+    <nav id="menu">
+      <ul class="links">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'admin:login' %}">Admin</a></li>
+        <li><a href="{% url 'overview' %}">Overview</a></li>
+        <li><a href="{% url 'dataset' %}">Similarity Generation</a></li>
+        <li><a href="{% url 'about' %}">About Us</a></li>
+      </ul>
+    </nav>
+    <!-- Banner -->
+    <section class="banner">
+      <article>
+        <img src="{%static 'images/dtbg.jpg' %}" alt="" />
+        <div class="inner">
+          <header>
+            <h3><b>Similarity Generation</b></h3>
+            <h2 id="ovheader">Visualisation</h2>
+          </header>
+        </div>
+      </article>
+    </section>
 
-  <!-- Header -->
-  <header id="header" class="alt">
-    <div class="logo"><a href="{% url 'home' %}">GenSim Utility</a></div>
-    <a href="#menu">Menu</a>
-  </header>
-
-  <!-- Nav -->
-  <nav id="menu">
-    <ul class="links">
-      <li><a href="{% url 'home' %}">Home</a></li>
-      <li><a href="{% url 'admin:login' %}">Admin</a></li>
-      <li><a href="{% url 'overview' %}">Overview</a></li>
-      <li><a href="{% url 'dataset' %}">Similarity Generation</a></li>
-      <li><a href="{% url 'about' %}">About Us</a></li>
-    </ul>
-  </nav>
-  <!-- Banner -->
-  <section class="banner">
-    <article>
-      <img src="{%static 'images/dtbg.jpg' %}" alt="" />
-      <div class="inner">
-        <header>
-          <h3><b>Similarity Generation</b></h3>
-          <h2 id="ovheader">Visualisation</h2>
-        </header>
-      </div>
-    </article>
-  </section>
-
-  <section id="outerbox1" class="wrapper">
-    <h2 class="pcentre">Initial Line graphs </h2>
+    <section id="outerbox1" class="wrapper">
+      <h2 class="pcentre">Initial Line graphs</h2>
       <div class="accordion">
-        
-        <input class="accordion__radio" type="radio" name="tone" id="tab-11" checked/>
-        <label class="accordion__label" for="tab-11">Dataset 1
+        <input
+          class="accordion__radio"
+          type="radio"
+          name="tone"
+          id="tab-11"
+          checked
+        />
+        <label class="accordion__label" for="tab-11"
+          >Dataset 1
           <span class="accordion-tab--status"></span>
         </label>
         <div class="accordion__content">
           <div class="accordion__content__image__container">
-            <img class="accordion__content__image" src="data:image/png;base64,{{ data1_line }}" alt="placeholder alt text" />
+            <img
+              class="accordion__content__image"
+              src="data:image/png;base64,{{ data1_line }}"
+              alt="placeholder alt text"
+            />
           </div>
-          
+
           <div class="accordion__content__text">
-            <h3 class="accordion__content__text__title">Khalid Ipsum
+            <h3 class="accordion__content__text__title">
+              Line graph of the dataset
               <hr class="accordion__content__text__horizontal-line" />
             </h3>
             <p class="accordion__content__text__body">
-              To be successful you’ve got to work hard, to make history, simple, you’ve got to make it. Give thanks to the most high. To
-              be successful you’ve got to work hard, to make history, simple, you’ve got to make it.
-            </p>
-            <p class="accordion__content__text__body">
-              The key to more success is to get a massage once a week, very important, major key, cloth talk. How’s business? Boomin. Hammock
-              talk come soon. To be successful you’ve got to work hard, to make history, simple, you’ve got to make it. Hammock
-              talk come soon.
+              This graph shows the line graph of the first timeseries dataset
+              which are compared to find similarity indices.
             </p>
           </div>
         </div>
 
         <input class="accordion__radio" type="radio" name="tone" id="tab-12" />
-        <label class="accordion__label" for="tab-12">Dataset 2
+        <label class="accordion__label" for="tab-12"
+          >Dataset 2
           <span class="accordion-tab--status"></span>
         </label>
         <div class="accordion__content">
           <div class="accordion__content__image__container">
-            <img class="accordion__content__image" src="data:image/png;base64,{{ data2_line }}" alt="placeholder alt text" />
+            <img
+              class="accordion__content__image"
+              src="data:image/png;base64,{{ data2_line }}"
+              alt="placeholder alt text"
+            />
           </div>
 
           <div class="accordion__content__text">
-            <h3 class="accordion__content__text__title">Khalid Ipsum
+            <h3 class="accordion__content__text__title">
+              Line graph of the dataset
               <hr class="accordion__content__text__horizontal-line" />
             </h3>
             <p class="accordion__content__text__body">
-              To be successful you’ve got to work hard, to make history, simple, you’ve got to make it. Give thanks to the most high. To
-              be successful you’ve got to work hard, to make history, simple, you’ve got to make it.
-            </p>
-            <p class="accordion__content__text__body">
-              The key to more success is to get a massage once a week, very important, major key, cloth talk. How’s business? Boomin. Hammock
-              talk come soon. To be successful you’ve got to work hard, to make history, simple, you’ve got to make it. Hammock
-              talk come soon.
+              This graph shows the line graph of the second timeseries dataset
+              which are compared to find similarity indices.
             </p>
           </div>
         </div>
-
-        
       </div>
-  </section>
+    </section>
 
-
-  <section id="outerbox2" class="wrapper">
-    <h2 class="pcentre">Resampled Line Graphs</h2>
+    <section id="outerbox2" class="wrapper">
+      <h2 class="pcentre">Resampled Line Graphs</h2>
       <div class="accordion">
-        
-
-        <input class="accordion__radio" type="radio" name="ttwo" id="tab-21" checked/>
-        <label class="accordion__label" for="tab-21">Dataset 1
+        <input
+          class="accordion__radio"
+          type="radio"
+          name="ttwo"
+          id="tab-21"
+          checked
+        />
+        <label class="accordion__label" for="tab-21"
+          >Dataset 1
           <span class="accordion-tab--status"></span>
         </label>
         <div class="accordion__content">
           <div class="accordion__content__image__container">
-            <img class="accordion__content__image" src="data:image/png;base64,{{ data2resample_line }}" alt="placeholder alt text" />
+            <img
+              class="accordion__content__image"
+              src="data:image/png;base64,{{ data2resample_line }}"
+              alt="placeholder alt text"
+            />
           </div>
 
           <div class="accordion__content__text">
-            <h3 class="accordion__content__text__title">Khalid Ipsum
+            <h3 class="accordion__content__text__title">
+              Line graph of resampled dataset
               <hr class="accordion__content__text__horizontal-line" />
             </h3>
             <p class="accordion__content__text__body">
-              To be successful you’ve got to work hard, to make history, simple, you’ve got to make it. Give thanks to the most high. To
-              be successful you’ve got to work hard, to make history, simple, you’ve got to make it.
-            </p>
-            <p class="accordion__content__text__body">
-              The key to more success is to get a massage once a week, very important, major key, cloth talk. How’s business? Boomin. Hammock
-              talk come soon. To be successful you’ve got to work hard, to make history, simple, you’ve got to make it. Hammock
-              talk come soon.
+              This graph shows the line graph after resampling first timeseries
+              dataset.
             </p>
           </div>
         </div>
 
         <input class="accordion__radio" type="radio" name="ttwo" id="tab-22" />
-        <label class="accordion__label" for="tab-22">Dataset 2
+        <label class="accordion__label" for="tab-22"
+          >Dataset 2
           <span class="accordion-tab--status"></span>
         </label>
         <div class="accordion__content">
           <div class="accordion__content__image__container">
-            <img class="accordion__content__image" src="data:image/png;base64,{{ data1resample_line }}" alt="placeholder alt text" />
-          </div> 
-          
+            <img
+              class="accordion__content__image"
+              src="data:image/png;base64,{{ data1resample_line }}"
+              alt="placeholder alt text"
+            />
+          </div>
+
           <div class="accordion__content__text">
-            <h3 class="accordion__content__text__title">Khalid Ipsum
+            <h3 class="accordion__content__text__title">
+              Line graph of resampled dataset
               <hr class="accordion__content__text__horizontal-line" />
             </h3>
             <p class="accordion__content__text__body">
-              To be successful you’ve got to work hard, to make history, simple, you’ve got to make it. Give thanks to the most high. To
-              be successful you’ve got to work hard, to make history, simple, you’ve got to make it.
-            </p>
-            <p class="accordion__content__text__body">
-              The key to more success is to get a massage once a week, very important, major key, cloth talk. How’s business? Boomin. Hammock
-              talk come soon. To be successful you’ve got to work hard, to make history, simple, you’ve got to make it. Hammock
-              talk come soon.
+              This graph shows the line graph after resampling second timeseries
+              dataset.
             </p>
           </div>
         </div>
-
-
       </div>
-  </section>
+    </section>
 
-  <section id="outerbox3" class="wrapper">
-    <h2 class="pcentre">Resampled Bar graphs</h2>
+    <section id="outerbox3" class="wrapper">
+      <h2 class="pcentre">Resampled Bar graphs</h2>
       <div class="accordion">
-
-        <input class="accordion__radio" type="radio" name="tthree" id="tab-31" checked/>
-        <label class="accordion__label" for="tab-31">Dataset 1
+        <input
+          class="accordion__radio"
+          type="radio"
+          name="tthree"
+          id="tab-31"
+          checked
+        />
+        <label class="accordion__label" for="tab-31"
+          >Dataset 1
           <span class="accordion-tab--status"></span>
         </label>
         <div class="accordion__content">
           <div class="accordion__content__image__container">
-            <img class="accordion__content__image" src="data:image/png;base64,{{ data1resample_bar }}" alt="placeholder alt text" />
-          </div>  
+            <img
+              class="accordion__content__image"
+              src="data:image/png;base64,{{ data1resample_bar }}"
+              alt="placeholder alt text"
+            />
+          </div>
 
           <div class="accordion__content__text">
-            <h3 class="accordion__content__text__title">Khalid Ipsum
+            <h3 class="accordion__content__text__title">
+              Bar graph of resampled dataset
               <hr class="accordion__content__text__horizontal-line" />
             </h3>
             <p class="accordion__content__text__body">
-              To be successful you’ve got to work hard, to make history, simple, you’ve got to make it. Give thanks to the most high. To
-              be successful you’ve got to work hard, to make history, simple, you’ve got to make it.
-            </p>
-            <p class="accordion__content__text__body">
-              The key to more success is to get a massage once a week, very important, major key, cloth talk. How’s business? Boomin. Hammock
-              talk come soon. To be successful you’ve got to work hard, to make history, simple, you’ve got to make it. Hammock
-              talk come soon.
+              This graph shows the bar graph after resampling first timeseries
+              dataset.
             </p>
           </div>
         </div>
 
-        <input class="accordion__radio" type="radio" name="tthree" id="tab-32" />
-        <label class="accordion__label" for="tab-32">Dataset 2
+        <input
+          class="accordion__radio"
+          type="radio"
+          name="tthree"
+          id="tab-32"
+        />
+        <label class="accordion__label" for="tab-32"
+          >Dataset 2
           <span class="accordion-tab--status"></span>
         </label>
         <div class="accordion__content">
           <div class="accordion__content__image__container">
-            <img class="accordion__content__image" src="data:image/png;base64,{{ data2resample_bar }}" alt="placeholder alt text" />
+            <img
+              class="accordion__content__image"
+              src="data:image/png;base64,{{ data2resample_bar }}"
+              alt="placeholder alt text"
+            />
           </div>
 
           <div class="accordion__content__text">
-            <h3 class="accordion__content__text__title">Khalid Ipsum
+            <h3 class="accordion__content__text__title">
+              Bar graph of resampled dataset
               <hr class="accordion__content__text__horizontal-line" />
             </h3>
             <p class="accordion__content__text__body">
-              To be successful you’ve got to work hard, to make history, simple, you’ve got to make it. Give thanks to the most high. To
-              be successful you’ve got to work hard, to make history, simple, you’ve got to make it.
-            </p>
-            <p class="accordion__content__text__body">
-              The key to more success is to get a massage once a week, very important, major key, cloth talk. How’s business? Boomin. Hammock
-              talk come soon. To be successful you’ve got to work hard, to make history, simple, you’ve got to make it. Hammock
-              talk come soon.
+              This graph shows the line graph after resampling second timeseries
+              dataset.
             </p>
           </div>
         </div>
-
       </div>
-  </section>
+    </section>
 
-  
-  <section id="outerbox4" class="wrapper">
-    <h2 class="pcentre">Resampled Correlation graphs</h2>
+    <section id="outerbox4" class="wrapper">
+      <h2 class="pcentre">Resampled Correlation graphs</h2>
       <div class="accordion">
-
-        <input class="accordion__radio" type="radio" name="tfour" id="tab-41" checked/>
-        <label class="accordion__label" for="tab-41">Dataset 1
+        <input
+          class="accordion__radio"
+          type="radio"
+          name="tfour"
+          id="tab-41"
+          checked
+        />
+        <label class="accordion__label" for="tab-41"
+          >Dataset 1
           <span class="accordion-tab--status"></span>
         </label>
         <div class="accordion__content">
           <div class="accordion__content__image__container">
-            <img class="accordion__content__image" src="data:image/png;base64,{{ data1resample_corr }}" alt="placeholder alt text" />
-          </div>  
+            <img
+              class="accordion__content__image"
+              src="data:image/png;base64,{{ data1resample_corr }}"
+              alt="placeholder alt text"
+            />
+          </div>
 
           <div class="accordion__content__text">
-            <h3 class="accordion__content__text__title">Khalid Ipsum
+            <h3 class="accordion__content__text__title">
+              Correlation matrix of resampled dataset
               <hr class="accordion__content__text__horizontal-line" />
             </h3>
             <p class="accordion__content__text__body">
-              To be successful you’ve got to work hard, to make history, simple, you’ve got to make it. Give thanks to the most high. To
-              be successful you’ve got to work hard, to make history, simple, you’ve got to make it.
-            </p>
-            <p class="accordion__content__text__body">
-              The key to more success is to get a massage once a week, very important, major key, cloth talk. How’s business? Boomin. Hammock
-              talk come soon. To be successful you’ve got to work hard, to make history, simple, you’ve got to make it. Hammock
-              talk come soon.
+              This graph shows the correlation matrix after resampling first
+              timeseries dataset.
             </p>
           </div>
         </div>
 
         <input class="accordion__radio" type="radio" name="tfour" id="tab-42" />
-        <label class="accordion__label" for="tab-42">Dataset 2
+        <label class="accordion__label" for="tab-42"
+          >Dataset 2
           <span class="accordion-tab--status"></span>
         </label>
         <div class="accordion__content">
           <div class="accordion__content__image__container">
-            <img class="accordion__content__image" src="data:image/png;base64,{{ data2resample_corr }}" alt="placeholder alt text" />
+            <img
+              class="accordion__content__image"
+              src="data:image/png;base64,{{ data2resample_corr }}"
+              alt="placeholder alt text"
+            />
           </div>
 
           <div class="accordion__content__text">
-            <h3 class="accordion__content__text__title">Khalid Ipsum
+            <h3 class="accordion__content__text__title">
+              Correlation matrix of resampled dataset
               <hr class="accordion__content__text__horizontal-line" />
             </h3>
             <p class="accordion__content__text__body">
-              To be successful you’ve got to work hard, to make history, simple, you’ve got to make it. Give thanks to the most high. To
-              be successful you’ve got to work hard, to make history, simple, you’ve got to make it.
-            </p>
-            <p class="accordion__content__text__body">
-              The key to more success is to get a massage once a week, very important, major key, cloth talk. How’s business? Boomin. Hammock
-              talk come soon. To be successful you’ve got to work hard, to make history, simple, you’ve got to make it. Hammock
-              talk come soon.
+              This graph shows the correlation matrix after resampling second
+              timeseries dataset.
             </p>
           </div>
         </div>
-
       </div>
-  </section>
+    </section>
 
-
-  <section id="outerbox5" class="wrapper">
-    <h2 class="pcentre">Combined Line graphs</h2>
+    <section id="outerbox5" class="wrapper">
+      <h2 class="pcentre">Combined Line graphs</h2>
       <div class="accordion">
-
-        <input class="accordion__radio" type="radio" name="tfive" id="tab-51" checked/>
-        <label class="accordion__label" for="tab-51">Dataset 1
+        <input
+          class="accordion__radio"
+          type="radio"
+          name="tfive"
+          id="tab-51"
+          checked
+        />
+        <label class="accordion__label" for="tab-51"
+          >Dataset 1
           <span class="accordion-tab--status"></span>
         </label>
         <div class="accordion__content">
           <div class="accordion__content__image__container">
-            <img class="accordion__content__image" src="data:image/png;base64,{{ data1combined_line }}" alt="placeholder alt text" />
-          </div>  
+            <img
+              class="accordion__content__image"
+              src="data:image/png;base64,{{ data1combined_line }}"
+              alt="placeholder alt text"
+            />
+          </div>
 
           <div class="accordion__content__text">
-            <h3 class="accordion__content__text__title">Khalid Ipsum
+            <h3 class="accordion__content__text__title">
+              Representative attribute for dataset
               <hr class="accordion__content__text__horizontal-line" />
             </h3>
             <p class="accordion__content__text__body">
-              To be successful you’ve got to work hard, to make history, simple, you’ve got to make it. Give thanks to the most high. To
-              be successful you’ve got to work hard, to make history, simple, you’ve got to make it.
-            </p>
-            <p class="accordion__content__text__body">
-              The key to more success is to get a massage once a week, very important, major key, cloth talk. How’s business? Boomin. Hammock
-              talk come soon. To be successful you’ve got to work hard, to make history, simple, you’ve got to make it. Hammock
-              talk come soon.
+              This grpah show the single attribute of the first timeseries
+              dataset which is combined to represent the whole dataset and that
+              normalized to have values between 0 and 1.
             </p>
           </div>
         </div>
 
         <input class="accordion__radio" type="radio" name="tfive" id="tab-52" />
-        <label class="accordion__label" for="tab-52">Dataset 2
+        <label class="accordion__label" for="tab-52"
+          >Dataset 2
           <span class="accordion-tab--status"></span>
         </label>
         <div class="accordion__content">
           <div class="accordion__content__image__container">
-            <img class="accordion__content__image" src="data:image/png;base64,{{ data2combined_line }}" alt="placeholder alt text" />
+            <img
+              class="accordion__content__image"
+              src="data:image/png;base64,{{ data2combined_line }}"
+              alt="placeholder alt text"
+            />
           </div>
 
           <div class="accordion__content__text">
-            <h3 class="accordion__content__text__title">Khalid Ipsum
+            <h3 class="accordion__content__text__title">
+              Representative attribute for dataset
               <hr class="accordion__content__text__horizontal-line" />
             </h3>
             <p class="accordion__content__text__body">
-              To be successful you’ve got to work hard, to make history, simple, you’ve got to make it. Give thanks to the most high. To
-              be successful you’ve got to work hard, to make history, simple, you’ve got to make it.
-            </p>
-            <p class="accordion__content__text__body">
-              The key to more success is to get a massage once a week, very important, major key, cloth talk. How’s business? Boomin. Hammock
-              talk come soon. To be successful you’ve got to work hard, to make history, simple, you’ve got to make it. Hammock
-              talk come soon.
+              This grpah show the single attribute of the second timeseries
+              dataset which is combined to represent the whole dataset and that
+              normalized to have values between 0 and 1.
             </p>
           </div>
         </div>
-
       </div>
-  </section>
+    </section>
 
     <!-- </div> -->
     <section id="outerbox6" class="wrapper">
-      <h2 class="pcentre">Different Similarity indices computed for the above pair of datasets. </h2>
+      <h2 class="pcentre">
+        Different Similarity indices computed for the above pair of datasets.
+      </h2>
       <div class="pcentre">
-      <div class="grid-style"  >
-           
-        <div class="ibox"> Cosine: {{ cos }}</div>
-        <div  class="ibox"> Euclidean: {{ euc }}</div>
-        <div  class="ibox"> Pearson: {{ pea }}</div>
-        <div  class="ibox"> Chebyshev: {{ cheby }}</div>
-        <div  class="ibox"> Soergel: {{ soer }}</div>
-        <div  class="ibox"> Matusita: {{ matu }}</div>
-        <div  class="ibox"> Divergence: {{ dive }}</div>
-        <div  class="ibox"> Kulcynski: {{ kulc }}</div>
+        <div class="grid-style">
+          <div class="ibox">Cosine: {{ cos }}</div>
+          <div class="ibox">Euclidean: {{ euc }}</div>
+          <div class="ibox">Pearson: {{ pea }}</div>
+          <div class="ibox">Chebyshev: {{ cheby }}</div>
+          <div class="ibox">Soergel: {{ soer }}</div>
+          <div class="ibox">Matusita: {{ matu }}</div>
+          <div class="ibox">Divergence: {{ dive }}</div>
+          <div class="ibox">Kulcynski: {{ kulc }}</div>
+        </div>
+        <br />
+        <button class="btn-lg btn-primary" type="button" id="cmd">
+          Download Report
+        </button>
       </div>
-        <br>
-        <button class="btn-lg btn-primary" type="button" id="cmd">Download Report</button>
-      
-     </div>
       <!-- {{ cos }}<br>
           {{ euc }}<br>
           {{ pea }}<br>
@@ -364,79 +412,106 @@
           {{ soer }}<br>
           {{ matu }}<br>
           {{ dive }}<br> -->
-      
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
 
-<!--the script-->
-<script>
-var doc = new jsPDF();
-var imgdata1_line = 'data:image/png;base64,{{ data1_line }}'
-var imgdata1resample_line = 'data:image/png;base64,{{ data1resample_line }}'
-var imgdata1resample_bar = 'data:image/png;base64,{{ data1resample_bar }}'
-var imgdata1resample_corr = 'data:image/png;base64,{{ data1resample_corr }}'
-var imgdata1combined_line = 'data:image/png;base64,{{ data1combined_line }}'
-var imgdata2_line = 'data:image/png;base64,{{ data2_line }}'
-var imgdata2resample_line = 'data:image/png;base64,{{ data2resample_line }}'
-var imgdata2resample_bar = 'data:image/png;base64,{{ data2resample_bar }}'
-var imgdata2resample_corr = 'data:image/png;base64,{{ data2resample_corr }}'
-var imgdata2combined_line = 'data:image/png;base64,{{ data2combined_line }}'
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
 
-$('#cmd').click(function () {
-    doc.text("PDF report", 10, 10);
-    doc.addImage(imgdata1_line, 'PNG', 15, 40, 180, 160);
-    doc.addPage();
-    doc.addImage(imgdata1resample_line, 'PNG', 15, 40, 180, 160);
-    doc.addPage();
-    doc.addImage(imgdata1resample_bar, 'PNG', 15, 40, 180, 160);
-    doc.addPage();
-    doc.addImage(imgdata1resample_corr, 'PNG', 15, 40, 180, 160);
-    doc.addPage();
-    doc.addImage(imgdata1combined_line, 'PNG', 15, 40, 180, 160);
-    doc.addImage(imgdata2_line, 'PNG', 15, 40, 180, 160);
-    doc.addPage();
-    doc.addImage(imgdata2resample_line, 'PNG', 15, 40, 180, 160);
-    doc.addPage();
-    doc.addImage(imgdata2resample_bar, 'PNG', 15, 40, 180, 160);
-    doc.addPage();
-    doc.addImage(imgdata2resample_corr, 'PNG', 15, 40, 180, 160);
-    doc.addPage();
-    doc.addImage(imgdata2combined_line, 'PNG', 15, 40, 180, 160);
-    doc.addPage();
-    doc.text("cos:{{cos}}\n", 10, 10);
-    doc.text("euclidean:{{euc}}\n", 10, 20);
-    doc.text("pearson:{{pea}}\n", 10, 30);
-    doc.text("chebyshev:{{cheby}}\n", 10, 40);
-    doc.text("soergel:{{soer}}\n", 10, 50);
-    doc.text("matusita:{{matu}}\n", 10, 60);
-    doc.text("divergence:{{dive}}\n", 10, 70);
-    doc.text("kulcynski:{{kulc}}\n", 10, 80);
-    doc.save('generated-report.pdf');
-});
-</script>
-  </section>
+      <!--the script-->
+      <script>
+        var doc = new jsPDF();
+        var imgdata1_line = "data:image/png;base64,{{ data1_line }}";
+        var imgdata1resample_line =
+          "data:image/png;base64,{{ data1resample_line }}";
+        var imgdata1resample_bar =
+          "data:image/png;base64,{{ data1resample_bar }}";
+        var imgdata1resample_corr =
+          "data:image/png;base64,{{ data1resample_corr }}";
+        var imgdata1combined_line =
+          "data:image/png;base64,{{ data1combined_line }}";
+        var imgdata2_line = "data:image/png;base64,{{ data2_line }}";
+        var imgdata2resample_line =
+          "data:image/png;base64,{{ data2resample_line }}";
+        var imgdata2resample_bar =
+          "data:image/png;base64,{{ data2resample_bar }}";
+        var imgdata2resample_corr =
+          "data:image/png;base64,{{ data2resample_corr }}";
+        var imgdata2combined_line =
+          "data:image/png;base64,{{ data2combined_line }}";
 
+        $("#cmd").click(function () {
+          doc.text("PDF report", 10, 10);
+          doc.addImage(imgdata1_line, "PNG", 15, 40, 180, 160);
+          doc.addPage();
+          doc.addImage(imgdata1resample_line, "PNG", 15, 40, 180, 160);
+          doc.addPage();
+          doc.addImage(imgdata1resample_bar, "PNG", 15, 40, 180, 160);
+          doc.addPage();
+          doc.addImage(imgdata1resample_corr, "PNG", 15, 40, 180, 160);
+          doc.addPage();
+          doc.addImage(imgdata1combined_line, "PNG", 15, 40, 180, 160);
+          doc.addImage(imgdata2_line, "PNG", 15, 40, 180, 160);
+          doc.addPage();
+          doc.addImage(imgdata2resample_line, "PNG", 15, 40, 180, 160);
+          doc.addPage();
+          doc.addImage(imgdata2resample_bar, "PNG", 15, 40, 180, 160);
+          doc.addPage();
+          doc.addImage(imgdata2resample_corr, "PNG", 15, 40, 180, 160);
+          doc.addPage();
+          doc.addImage(imgdata2combined_line, "PNG", 15, 40, 180, 160);
+          doc.addPage();
+          doc.text("cos:{{cos}}\n", 10, 10);
+          doc.text("euclidean:{{euc}}\n", 10, 20);
+          doc.text("pearson:{{pea}}\n", 10, 30);
+          doc.text("chebyshev:{{cheby}}\n", 10, 40);
+          doc.text("soergel:{{soer}}\n", 10, 50);
+          doc.text("matusita:{{matu}}\n", 10, 60);
+          doc.text("divergence:{{dive}}\n", 10, 70);
+          doc.text("kulcynski:{{kulc}}\n", 10, 80);
+          doc.save("generated-report.pdf");
+        });
+      </script>
+    </section>
 
-  <!-- Footer -->
-  <footer id="footer">
-    <div class="container">
-      <ul class="icons">
-        <li><a href="https://twitter.com/intent/tweet?text=Hello&url=http://127.0.0.1:8000/&via=smcri" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-        <li><a href="http://www.facebook.com/sharer/sharer.php?u=http://127.0.0.1:8000/" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-        <li><a href="https://www.instagram.com/p/CMgrAAZjG2d/" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-        <li><a href="mailto:?subject=I wanted you to see this site&amp;body=Check out this site http://www.website.com." class="icon fa-envelope-o"><span class="label">Email</span></a></li>
-      </ul>
-    </div>
-    <div class="copyright">
-      Project AOW
-    </div>
-  </footer>
-  <!-- Scripts -->
-  <script src="{%static 'assets/js/jquery.min.js' %}"></script>
-  <script src="{%static 'assets/js/jquery.scrollex.min.js' %}"></script>
-  <script src="{%static 'assets/js/skel.min.js' %}"></script>
-  <script src="{%static 'assets/js/util.js' %}"></script>
-  <script src="{%static 'assets/js/main.js' %}"></script>
-
-</body>
-
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="container">
+        <ul class="icons">
+          <li>
+            <a
+              href="https://twitter.com/intent/tweet?text=Hello&url=http://127.0.0.1:8000/&via=smcri"
+              class="icon fa-twitter"
+              ><span class="label">Twitter</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="http://www.facebook.com/sharer/sharer.php?u=http://127.0.0.1:8000/"
+              class="icon fa-facebook"
+              ><span class="label">Facebook</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.instagram.com/p/CMgrAAZjG2d/"
+              class="icon fa-instagram"
+              ><span class="label">Instagram</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="mailto:?subject=I wanted you to see this site&amp;body=Check out this site http://www.website.com."
+              class="icon fa-envelope-o"
+              ><span class="label">Email</span></a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="copyright">Project AOW</div>
+    </footer>
+    <!-- Scripts -->
+    <script src="{%static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{%static 'assets/js/jquery.scrollex.min.js' %}"></script>
+    <script src="{%static 'assets/js/skel.min.js' %}"></script>
+    <script src="{%static 'assets/js/util.js' %}"></script>
+    <script src="{%static 'assets/js/main.js' %}"></script>
+  </body>
 </html>
