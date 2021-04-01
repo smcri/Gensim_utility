@@ -13,12 +13,12 @@ img {
 
 .flex-container {
   display: flex;
-  background-color: rgb(213, 252, 252);
+  background-color: #e8deec;
   margin: 1rem;
 }
 
 .flex-container .content {
-  background-color: #e8deec;
+  background-color: #ffffff;
   padding: 1rem;
   margin: 1rem;
   font-size: 1rem;

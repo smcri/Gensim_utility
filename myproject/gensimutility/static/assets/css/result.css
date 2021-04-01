@@ -4665,6 +4665,9 @@ html {
   background-color:white;
   /* margin-right: 1px; */
   border-bottom: 1px solid teal;
+  /* overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block; */
 }
 
 .accordion__radio {
@@ -4688,7 +4691,9 @@ html {
   border-left: 1px solid black;
   border-right: 1px solid black;
   border-bottom: none;
-  
+  /* overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block; */
 }
 .accordion input[type="radio"]:checked + label + .accordion__content {
 	display: flex;
@@ -4759,6 +4764,9 @@ html {
     justify-content: space-between;
     font-size: 1.2em;
     padding: 5% 6% 5% 6%;
+    /* overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block; */
   }
 
   .accordion__label:last-child {
