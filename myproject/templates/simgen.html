@@ -19,6 +19,12 @@
 
 <body>
 
+  <!-- <div id="lwrap">
+    <span class="loader"><span class="loader-inner"></span></span>
+  </div> -->
+  <div id="loader"></div>
+ 
+
   <!-- Header -->
   <header id="header" class="alt">
     <div class="logo"><a href="{% url 'home' %}">GenSim Utility</a></div>
@@ -169,7 +175,7 @@
       	{% csrf_token %}
         <input type="text" id="dset1" name="dset1" readonly>
         <input type="text" id="dset2" name="dset2" readonly>
-      <button class="btn-lg btn-primary" type="submit" onclick="showresult()">Generate Result</button>
+      <button class="btn-lg btn-primary" type="submit" id="gen" onclick="load()">Generate Result</button>
     </form>
     </div>
   </section>
@@ -196,6 +202,18 @@
   <script src="{%static 'assets/js/skel.min.js' %}"></script>
   <script src="{%static 'assets/js/util.js' %}"></script>
   <script src="{%static 'assets/js/main.js' %}"></script>
+
+  <!-- <script> -->
+    // jQuery(document).ready(function($){
+    // $(window).on("load",function(){
+    //   $("#l-wrap").fadeOut("slow");
+    // });
+    // });
+  //   jQuery(document).ready(function() {
+  // jQuery('#loading').fadeOut(3000);
+
+  
+   <!-- </script> -->
 </body>
 
 </html>

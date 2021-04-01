@@ -12,6 +12,12 @@
     <script src="{%static 'assets/js/simgen.js'%}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- Scripts -->
+    <script src="{%static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{%static 'assets/js/jquery.scrollex.min.js' %}"></script>
+    <script src="{%static 'assets/js/skel.min.js' %}"></script>
+    <script src="{%static 'assets/js/util.js' %}"></script>
+    <script src="{%static 'assets/js/main.js' %}"></script>
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -33,6 +39,9 @@
   </head>
 
   <body>
+    <!-- <div id="l-wrap">
+      <span class="loader"><span class="loader-inner"></span></span>
+      </div> -->
     <!-- Header -->
     <header id="header" class="alt">
       <div class="logo"><a href="{% url 'home' %}">GenSim Utility</a></div>
@@ -500,11 +509,9 @@
       </div>
       <div class="copyright">Project AOW</div>
     </footer>
-    <!-- Scripts -->
-    <script src="{%static 'assets/js/jquery.min.js' %}"></script>
-    <script src="{%static 'assets/js/jquery.scrollex.min.js' %}"></script>
-    <script src="{%static 'assets/js/skel.min.js' %}"></script>
-    <script src="{%static 'assets/js/util.js' %}"></script>
-    <script src="{%static 'assets/js/main.js' %}"></script>
+    
+
+
+
   </body>
 </html>

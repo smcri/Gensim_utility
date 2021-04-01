@@ -132,16 +132,9 @@ function actoggle2(){
   var p=document.getElementById('pd1'); 
   var panel=document.getElementById(p.value);
   panel.style.maxHeight = panel.scrollHeight + "px";
-}
+}*/
 
-function toggle2(){
-  var list2=["ds4","ds5","ds6"];
-  var acc=document.getElementById('ac2');
-  acc.classList.add("active");
-  for(let x = 0; x < list2.length; x++){   
-    document.getElementById(list2[x]).style.maxHeight=null;
-  }    
-  var p=document.getElementById('pd2'); 
-  var panel=document.getElementById(p.value);
-  panel.style.maxHeight = panel.scrollHeight + "px";
-}*/ 
+function load(){
+  var ele=document.getElementById('loader');
+  ele.style.display = "block";
+} 
