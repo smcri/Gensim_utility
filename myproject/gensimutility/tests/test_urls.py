@@ -1,6 +1,6 @@
 from django.test import TestCase
 from django.urls import reverse,resolve
-from gensimutility.views import Overview , dataset , home , about , learnmore  
+from gensimutility.views import Overview , dataset , home , about , learnmore ,sim_graph 
 
 
 
@@ -41,5 +41,5 @@ class TestURL(TestCase):
             url = reverse('sim')
             #print(resolve(url))
             #response = self.client.get(url)
-            self.assertEquals(resolve(url).func ,sim ) 
+            self.assertEquals(resolve(url).func ,sim_graph ) 
    
