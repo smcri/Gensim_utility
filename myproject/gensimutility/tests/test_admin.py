@@ -26,7 +26,8 @@ class TestAdminPanel(TestCase):
             "/admin/auth/group/add/",
             "/admin/auth/user/",
             "/admin/auth/user/add/",
-            "/admin/password_change/"
+            "/admin/password_change/",
+            "/admin/logout/"
         ]
         for page in admin_pages:
             resp = client.get(page)
