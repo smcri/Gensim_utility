@@ -135,6 +135,23 @@ function actoggle2(){
 }*/
 
 function load(){
-  var ele=document.getElementById('loader');
+  var ele=document.getElementById('lwrap');
   ele.style.display = "block";
 } 
+
+function mybt() {
+  var modal = document.getElementById('myModal');
+  modal.style.display = "block";
+}
+
+function clo() {
+  var modal = document.getElementById('myModal');
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  var modal = document.getElementById('myModal');
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
