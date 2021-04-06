@@ -16,6 +16,7 @@ from django.http import HttpResponse
 import mpld3
 import urllib,base64
 from django.core.validators import URLValidator
+from django.http import HttpResponse
 
 #from simi import ret_graph
 from .models import blog,datasets,team
@@ -171,7 +172,10 @@ def sim_graph(request):
 
 	dataset = datasets.objects.get(id=1)
 	path1 = getattr(dataset,'path')
-	df1 = pd.read_csv(url1,parse_dates=True, index_col=0,error_bad_lines=False)
+	try:
+		df1 = pd.read_csv(url1,parse_dates=True, index_col=0,error_bad_lines=False)
+	except:
+		return HttpResponse('<h1>Page not found</h1>')
 
 	print(df1)
 	df1[df1.columns].plot(kind='line')
@@ -194,16 +198,19 @@ def sim_graph(request):
 	l = 1
 	r = 365*24
 	ans = l
-	while l<=r:
-		mid = int((l+r)/2)
-		df1_resample = df1[df1.columns].resample(str(mid)+'H').mean()
-		sz = int(len(df1_resample))
-		print(sz)
-		if sz<=150:
-			ans = sz
-			r = mid-1
-		elif sz>150:
-			l = mid+1
+	try:
+		while l<=r:
+			mid = int((l+r)/2)
+			df1_resample = df1[df1.columns].resample(str(mid)+'H').mean()
+			sz = int(len(df1_resample))
+			print(sz)
+			if sz<=150:
+				ans = sz
+				r = mid-1
+			elif sz>150:
+				l = mid+1
+	except:
+		return HttpResponse('<h1>Your data is probably of the wrong format</h1>')
 
 #	df1_resample = df1[df1.columns].resample('D').mean()
 	df1_resample = df1_resample.interpolate()
@@ -243,7 +250,10 @@ def sim_graph(request):
 
 	plt.clf()
 
-	df1_resample_combine = df1_resample.take([1],axis=1)
+	try:
+		df1_resample_combine = df1_resample.take([1],axis=1)
+	except:
+		df1_resample_combine = df1_resample
 	for i in range(len(df1_resample)):
 		df1_resample_combine[i:i+1] = np.average(df1_resample[i:i+1],axis=1, weights=(1*df1_resample.var()+0.0*df1_resample.mean()))
 	df1_resample_combine=(df1_resample_combine-df1_resample_combine.min())/(df1_resample_combine.max()-df1_resample_combine.min())
@@ -270,7 +280,10 @@ def sim_graph(request):
 
 	dataset = datasets.objects.get(id=2)
 	path1 = getattr(dataset,'path')
-	df2 = pd.read_csv(url2,parse_dates=True,index_col=0)
+	try:
+		df2 = pd.read_csv(url2,parse_dates=True,index_col=0)
+	except:
+		return HttpResponse('<h1>Page not found</h1>')
 
 	df2[df2.columns].plot(kind='line')
 	fig = plt.gcf()
@@ -296,16 +309,19 @@ def sim_graph(request):
 	l = 1
 	r = 365*24
 	ans = l
-	while l<=r:
-		mid = int((l+r)/2)
-		df2_resample = df2[df2.columns].resample(str(mid)+'H').mean()
-		sz = int(len(df2_resample))
-		print(sz)
-		if sz<=150:
-			ans = sz
-			r = mid-1
-		elif sz>150:
-			l = mid+1
+	try:
+		while l<=r:
+			mid = int((l+r)/2)
+			df2_resample = df2[df2.columns].resample(str(mid)+'H').mean()
+			sz = int(len(df2_resample))
+			print(sz)
+			if sz<=150:
+				ans = sz
+				r = mid-1
+			elif sz>150:
+				l = mid+1
+	except:
+		return HttpResponse('<h1>Your data is probably of the wrong format</h1>')
 
 #	df2_resample = df2[df2.columns].resample('1H').mean()
 	df2_resample = df2_resample.interpolate()
@@ -343,8 +359,10 @@ def sim_graph(request):
 	#fig = plt.gcf()
 
 	#uri10 = urllib.parse.quote(graphrender(io.BytesIO()))
-
-	df2_resample_combine = df2_resample.take([1],axis=1)
+	try:
+		df2_resample_combine = df2_resample.take([1],axis=1)
+	except:
+		df2_resample_combine = df2_resample
 	for i in range(len(df2_resample)):
 		df2_resample_combine[i:i+1] = np.average(df2_resample[i:i+1],axis=1, weights=(1*df2_resample.var()+0*df2_resample.mean()))
 	df2_resample_combine=(df2_resample_combine-df2_resample_combine.min())/(df2_resample_combine.max()-df2_resample_combine.min())
