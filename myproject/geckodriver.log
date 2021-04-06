@@ -1,0 +1,14 @@
+1617723411150	geckodriver	INFO	Listening on 127.0.0.1:38461
+1617723411156	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileN3ioFi"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617723425427	Marionette	INFO	Listening on port 39171
+1617723425717	Marionette	WARN	TLS certificate errors will be ignored for this session
+1617723552445	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+console.log: WebExtensions: reset-default-search: No addons in our list are installed.
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x6D0029,name=PNecko::Msg_RemoveRequestContext) Channel closing: too late to send/recv, messages will be lost
+
+1617724260709	Marionette	INFO	Stopped listening on port 39171
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
