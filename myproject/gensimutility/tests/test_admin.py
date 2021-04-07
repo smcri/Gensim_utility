@@ -38,8 +38,8 @@ class TestAdminInvalid(TestCase):
         self.password = User.objects.make_random_password()
         user, created = User.objects.get_or_create(username=self.username)
         user.set_password(self.password)
-        user.is_staff = True
-        user.is_superuser = True
+        user.is_staff = False
+        user.is_superuser = False
         user.is_active = False
         user.save()
         self.user = user
