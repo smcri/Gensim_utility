@@ -1,0 +1,16 @@
+1617740770813	geckodriver	INFO	Listening on 127.0.0.1:52269
+1617740770817	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilefcfUhP"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617740774060	Marionette	INFO	Listening on port 40269
+1617740774139	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://127.0.0.1:8000/static/assets/js/main.js, line 30: ReferenceError: skel is not defined
+1617740797729	geckodriver	INFO	Listening on 127.0.0.1:33657
+1617740797732	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileI94hGE"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617740801033	Marionette	INFO	Listening on port 36797
+1617740801053	Marionette	WARN	TLS certificate errors will be ignored for this session
+1617740807552	Marionette	INFO	Stopped listening on port 36797
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1617740812393	Marionette	INFO	Stopped listening on port 40269

@@ -255,7 +255,7 @@ def sim_graph(request):
 	except:
 		df1_resample_combine = df1_resample
 	for i in range(len(df1_resample)):
-		df1_resample_combine[i:i+1] = np.average(df1_resample[i:i+1],axis=1, weights=(1*df1_resample.var()+0.0*df1_resample.mean()))
+		df1_resample_combine[i:i+1] = np.average(df1_resample[i:i+1],axis=1, weights=(1*df1_resample.std()+0.0*df1_resample.mean()))
 	df1_resample_combine=(df1_resample_combine-df1_resample_combine.min())/(df1_resample_combine.max()-df1_resample_combine.min())
 	df1_resample_combine.plot(kind='line',figsize=(20,10))
 	fig = plt.gcf()
@@ -364,7 +364,7 @@ def sim_graph(request):
 	except:
 		df2_resample_combine = df2_resample
 	for i in range(len(df2_resample)):
-		df2_resample_combine[i:i+1] = np.average(df2_resample[i:i+1],axis=1, weights=(1*df2_resample.var()+0*df2_resample.mean()))
+		df2_resample_combine[i:i+1] = np.average(df2_resample[i:i+1],axis=1, weights=(1*df2_resample.std()+0*df2_resample.mean()))
 	df2_resample_combine=(df2_resample_combine-df2_resample_combine.min())/(df2_resample_combine.max()-df2_resample_combine.min())
 	df2_resample_combine.plot(kind='line',figsize=(20,10))
 	fig = plt.gcf()

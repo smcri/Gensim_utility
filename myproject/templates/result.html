@@ -157,7 +157,12 @@
             </h3>
             <p class="accordion__content__text__body">
               This graph shows the line graph after resampling first timeseries
-              dataset.
+              dataset. The resampling is done to reduce the runtime of
+              algorithm. And since there can be large variation between the
+              range of number of points. A suitable timeperiod is found so that
+              after resampling the number of points is around 150 and then the
+              dataset is interpolated to fill any missing points so that there
+              is a continous distribution of data.
             </p>
           </div>
         </div>
@@ -182,8 +187,13 @@
               <hr class="accordion__content__text__horizontal-line" />
             </h3>
             <p class="accordion__content__text__body">
-              This graph shows the line graph after resampling second timeseries
-              dataset.
+              This graph shows the line graph after resampling first timeseries
+              dataset. The resampling is done to reduce the runtime of
+              algorithm. And since there can be large variation between the
+              range of number of points. A suitable timeperiod is found so that
+              after resampling the number of points is around 150 and then the
+              dataset is interpolated to fill any missing points so that there
+              is a continous distribution of data.
             </p>
           </div>
         </div>
@@ -287,7 +297,7 @@
               <hr class="accordion__content__text__horizontal-line" />
             </h3>
             <p class="accordion__content__text__body">
-              This graph shows the correlation matrix after resampling first
+              This graph shows the correlation matrix after resampling second
               timeseries dataset.
             </p>
           </div>
@@ -350,9 +360,15 @@
               <hr class="accordion__content__text__horizontal-line" />
             </h3>
             <p class="accordion__content__text__body">
-              This grpah show the single attribute of the first timeseries
-              dataset which is combined to represent the whole dataset and that
-              normalized to have values between 0 and 1.
+              This graph show the single representative attribute of the first
+              timeseries dataset which is combined using all other attributes.
+              The combination is done by taking the weighted mean of all
+              attributes with weight as standard deviation. Since we want to
+              have representative attribute to show whole dataset so having more
+              weight of attribue which has more variations is better. And taking
+              standard deviation as weight has taken care of that fact. After
+              that we normalize the attribute so that values are between -1 to
+              1, so that both attribute compared are in same range.
             </p>
           </div>
         </div>
@@ -377,9 +393,15 @@
               <hr class="accordion__content__text__horizontal-line" />
             </h3>
             <p class="accordion__content__text__body">
-              This grpah show the single attribute of the second timeseries
-              dataset which is combined to represent the whole dataset and that
-              normalized to have values between 0 and 1.
+              This graph show the single representative attribute of the first
+              timeseries dataset which is combined using all other attributes.
+              The combination is done by taking the weighted mean of all
+              attributes with weight as standard deviation. Since we want to
+              have representative attribute to show whole dataset so having more
+              weight of attribue which has more variations is better. And taking
+              standard deviation as weight has taken care of that fact. After
+              that we normalize the attribute so that values are between -1 to
+              1, so that both attribute compared are in same range.
             </p>
           </div>
         </div>
@@ -391,6 +413,11 @@
       <h2 class="pcentre">
         Different Similarity indices computed for the above pair of datasets.
       </h2>
+      <p>The two vector of both dataset may not be of equal length. To handle
+        that Dynamic time wrapping is used to equalize the length. The idea
+        behind that is to build one-to-many and many-to-one matches so that the
+        total distance can be minimised between the two. Then the formula for
+        various similarity indices is used.</p>
       <div class="pcentre">
         <div class="grid-style">
           <div class="ibox">Cosine: {{ cos }}</div>
@@ -403,7 +430,7 @@
           <div class="ibox">Kulcynski: {{ kulc }}</div>
         </div>
         <br />
-        <button class="btn-lg btn-primary" type="button" id="cmd">
+        <button class="btn-lg btn-primary" type="button" id="cmd" name="generated-reports">
           Download Report
         </button>
       </div>
