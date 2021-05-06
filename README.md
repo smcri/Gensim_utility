@@ -38,7 +38,8 @@ Steps to run the project:
   7. Run the project with ``` python3 manage.py runserver ```
   8. Open your preferred web browser
   9. Go to http://127.0.0.1:8000
-  10. Explore and use Gensim Utility
+  10. To use Admin: username:admin and password:a1s2d3f4
+  11. Explore and use Gensim Utility
 
 ***
 
