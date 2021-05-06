@@ -22,7 +22,8 @@ Steps to run the project:
   6. Run the project with ``` python3 manage.py runserver ```
   7. Open your preferred web browser
   8. Go to http://127.0.0.1:8000
-  9. Explore and use Gensim Utility
+  9. To use Admin: username:admin and password:a1s2d3f4
+  10. Explore and use Gensim Utility
   
 * If using Pip:
   Prerequisites:
@@ -48,7 +49,7 @@ Steps to run the project:
   2. Click on Similarity Generation option.
   3. Choose a dataset each from the preloaded datasets from each dropdown menu on the screen.
   4. Click Submit button under both menus to confirm your selection.
-  5. You can also import time series datasets by clicking on the Import dataset radio button and pasting the URLs in the text boxes that appear.
+  5. You can also import time series datasets(with timestamp in the first column) by clicking on the Import dataset radio button and pasting the URLs in the text boxes that appear.
   6. Click Submit button to confirm your URLs.
   7. Click on the generate button and wait for the results to be generated. It may take a while depending on the datasets chosen.
   8. A new page Visualisation appears. Explore the steps taken and the graphs generated for both datasets during the process.
