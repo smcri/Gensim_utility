@@ -2,15 +2,18 @@
 ***
 A project to get measures of similarity between two timeseries datasets using 8 similarity measures.
 ---
-Prerequisites:
-* Conda/Pip 
-* Any latest Web Browser
+
 ---
 
 Steps to run the project:
 * Clone the project.
 
 * If using Conda:
+
+  Prerequisites:
+  * Conda
+  * Any latest Web Browser
+
   1. Open Conda Command Prompt.
   2. cd into Gensim_utility\
   3. Create the project env and install dependencies with ``` conda env create -f projectgs.yml ```
@@ -22,6 +25,10 @@ Steps to run the project:
   9. Explore and use Gensim Utility
   
 * If using Pip:
+  Prerequisites:
+  * Pip, Python 3.7+
+  * Any latest Web Browser
+
   1. Open cmd.
   2. cd into Gensim_utility\
   3. Create a env called 'projectgs' with ``` python3 -m venv projectgs ```
